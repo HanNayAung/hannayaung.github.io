@@ -7,6 +7,7 @@
     <script language="Javascript" type="text/javascript">
 
       
+
       function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
     //compatibility for firefox and chrome
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
@@ -48,11 +49,11 @@
 // Usage
 
 getUserIP(function(ip){
-    alert("Got IP! :" + ip);
+    document.write("Got IP! :" + ip);
 });
 
 
-
+      getUserIP()
 
 
 
