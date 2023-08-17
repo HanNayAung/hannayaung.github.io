@@ -1,34 +1,91 @@
-<html>
-  <head>
-
-
- <meta http-equiv="Content-Script-Type" content="text/html" ; charset="UTF-8"  >
-  
-<title>This is a Test</title>
-  </head>
-  <body bgcolor="#ffffff">
-
-
-   
-    <script language="Javascript" type="text/javascript">  
-     
-      var platform=navigator.platform.toLowerCase();
-      var name;
-      if (platform.indexOf('win') !=-1)
-	  name="Welcome noob";
-      else if (platform.indexOf('mac') !=-1)
-	  name="welcome rich boy and girl";
-      else
-	  name="You are the chosen one."+platform;
-
-      document.write(name)
-     
-  
-   
-    </script>
-
- 
-     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Han Nay Aung">
+    <title>Han Nay Aung Home Page</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("network-background.png"); /* Replace with the actual image URL */
+            background-repeat: repeat; /* Set to "no-repeat" if using a single image */
+            background-color: #f1f1f1; /* Fallback color if the image is not available */
+            /* Add any additional styling for the body */
+        }
+        /* Add other CSS styles for the page as needed */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .menu li {
+            margin-right: 20px;
+        }
+        .menu li:last-child {
+            margin-right: 0;
+        }
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav {
+            /* Styles for the navigation menu */
+        }
+        main {
+            /* Styles for the main content section */
+            padding: 20px;
+        }
+        footer {
+            /* Styles for the footer section */
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Han Nay Aung Home Page</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#research.html">Research Interests</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+      ( Preparing )
+      <hr/>
+      Biography / Interests
+      <hr />
+      Han Nay Aung received the B.S.C degree in the Information and
+      Computer Sciences from Kwansei University, Hyougo, Japan, in
+      2022.
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Han Nay Aung. All rights reserved.</p>
+        <!-- Include any relevant copyright or disclaimer information here -->
+    </footer>
 </body>
 </html>
+
+
 
