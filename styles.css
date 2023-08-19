@@ -1,4 +1,4 @@
-body {
+ body {
      background-image: url("network-background.png"); /* Replace with the actual image URL */
      background-repeat: repeat; /* Set to "no-repeat" if using a single image */
      background-color: #f1f1f1; /* Fallback color if the image is not available */
@@ -47,7 +47,41 @@ body {
      width: 100%;
  }
  
- 
+
+/* profile-section */
+.profile-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Establish a positioning context */
+    text-align: center; /* Center the content horizontally */
+}
+
+.profile-section p {
+    padding-top: 10px;
+    margin: 0; /* Remove default margin for <p> element */
+}
+
+.awards {
+    padding-top: 10px;
+    margin: 0; /* Remove default margin for <p> element */
+}
+
+
+/* images-container */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 20%; 
+    height: 30%;
+}
+
+
  /* news-container */
 .news-container {
     display: grid;
@@ -84,32 +118,4 @@ body {
     text-decoration: none;
 }
  
-/* profile-section */
-.profile-section {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px 0;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; /* Establish a positioning context */
-    text-align: center; /* Center the content horizontally */
-}
-
-/* Adjust padding to create space between text and border */
-.profile-section hr,
-.profile-section p {
-    padding-top: 10px;
-    margin: 0; /* Remove default margin for <p> element */
-}
-
-/* images-container */
-.image-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.image-container img {
-    max-width: 20%; 
-    height: 30%;
-}
 
