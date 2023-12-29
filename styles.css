@@ -99,20 +99,20 @@
     transition: transform 0.2s;
 }
 
-.news-item:hover {
-    transform: translateY(-5px);
-}
 
+/* for header */
 .news-content h3 {
     margin: 0;
     font-size: 1.2rem;
 }
 
+/*  for paragraph */
 .news-content p {
     margin: 10px 0;
     color: #666;
 }
 
+/* for link  */
 .news-content a {
     color: #007bff;
     text-decoration: none;
