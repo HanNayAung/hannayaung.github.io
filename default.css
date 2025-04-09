@@ -1,0 +1,191 @@
+/* Class styles */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hfull {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hhalf {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hquarter {
+    width: 25%;
+}
+
+.plain {
+    /* Cell with no background */
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+.separated-table {
+    /* Align cells with padding (spaces) */
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+:root {
+    --white: rgb(100%, 100%, 100%);
+    --bg: rgb(96%, 96%, 100%);
+    --bglight: rgb(99%, 99%, 100%);
+    --fg: rgb(2%, 4%, 8%);
+    --light: rgba(10%, 20%, 50%, 0.5);
+    --medium: rgb(10%, 20%, 50%);
+    --dark: rgb(5%, 10%, 25%);
+    --verydark: rgb(2.5%, 5%, 12.5%);
+    --highlight:  rgba(100%, 77%, 0%, 0.2);
+    font-family: "Meiryo", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    color: var(--fg);
+    background: var(--white);
+    margin: 3em;
+}
+
+h1 {
+    color: black;
+}
+
+h2 {
+    /* Define heading bar */
+    color: var(--bg);
+    
+    --dark: rgb(10%, 50%, 58%);
+    --medium: rgb(10%, 50%, 58%);
+    background: linear-gradient(0deg, var(--dark), var(--medium));
+
+    box-shadow: .5em .5em 1em gray;
+    padding-left: 1em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+h3, h4 {
+    color: var(--medium);
+    filter: drop-shadow(1px 1px 1px gray);
+    border-bottom: 1px solid var(--light);
+}
+
+p {
+    margin-top: .75em;
+    margin-bottom: .75em;
+    line-height: 150%;
+}
+
+ul {
+    /* Outdent the bullet */
+    margin-left: -1em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    line-height: 150%;
+}
+
+li {
+    font-weight: bold;
+}
+
+li li, li p {
+    /* Revert to the normal face for the second level. */
+    font-weight: normal;
+}
+
+pre {
+    background: var(--bglight);
+    /* Rounded frame with shadow */
+    box-shadow: 2px 2px 4px gray;
+    padding: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    /* Display horizontal scrollbar if too long */
+    overflow: auto;
+    font-size: 110%;
+    line-height: 110%;
+}
+
+blockquote {
+    background: var(--bglight);
+    /* Frame with shadow */
+    border: solid 1px var(--fg);
+    box-shadow: 3px 3px 6px gray;
+    padding: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+a:link {
+    color: var(--medium);
+}
+
+a:visited {
+    color: var(--light);
+}
+
+a:hover, strong {
+    background: var(--highlight);
+}
+
+table {
+    /* Join bordes of all cells. */
+    border-collapse: collapse;
+}
+
+td, th {
+    border: solid 1px var(--fg);
+    /* Vertial gradient background */
+    background: linear-gradient(0deg, var(--bglight), var(--bg));
+    box-shadow: 3px 3px 6px gray;
+    padding: .5em;
+}
+
+img {
+    /* Add drop shadow. */
+    filter: drop-shadow(.2em .2em .4em gray);
+    margin: .5em;
+}
+
+/* Horizontally extend the textarea to fill the space. */
+input[type="text"], textarea {
+/*
+    padding: .5em;
+    border: none;
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+*/
+}
+
+input[type="submit"] {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+hr {
+  border-style: inset; 
+  border-width: 2px;
+  border-color: var(--light);
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+/* ---------------- PukiWiki specific */
+/* Date string for comments */
+span.comment_date {
+    font-size: 10pt;
+    font-weight: normal;
+    color: var(--light);
+}
