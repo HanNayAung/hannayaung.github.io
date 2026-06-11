@@ -1,317 +1,465 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お名前 - 研究者ポートフォリオ</title>
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesomeの読み込み (アイコン用) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fontsの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // 落ち着いたネイビーブルー
+                        secondary: '#475569',
+                        // 目に優しいカスタムカラー（ペーパーライク）
+                        paper: {
+                            DEFAULT: '#F5F5F0', // 全体の背景（優しいウォームグレー）
+                            light: '#FCFCF9',   // 真っ白の代わり（カードやメインセクション）
+                            dark: '#EBEBE4'     // 交互のセクション用
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* カスタムの微調整 */
+        .pub-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-paper text-gray-800 font-sans antialiased leading-relaxed">
 
-  <head>
-    <title>Han Nay Aung's Home Page</title>
-    <meta charset="utf-8">
-    <link href="default.css" rel="stylesheet">
-  </head>
+    <!-- ナビゲーションバー -->
+    <header class="sticky top-0 bg-paper-light/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-gray-900">Han Nay Aung</a>
+                </div>
+                <!-- デスクトップメニュー -->
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">ホーム</a>
+                    <a href="#news" class="text-gray-600 hover:text-primary font-medium transition-colors">ニュース</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary font-medium transition-colors">経歴</a>
+                    <a href="#awards" class="text-gray-600 hover:text-primary font-medium transition-colors">受賞・奨学金</a>
+                    <a href="#activities" class="text-gray-600 hover:text-primary font-medium transition-colors">活動</a>
+                    <a href="publications.html" class="text-gray-600 hover:text-primary font-medium transition-colors">業績</a>
+                </nav>
+                <!-- モバイルメニューボタン -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden md:hidden bg-paper-light border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">ホーム</a>
+                <a href="#news" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">ニュース</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">経歴</a>
+                <a href="#awards" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">受賞・奨学金</a>
+                <a href="#activities" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">活動</a>
+                <a href="publications.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md">業績</a>
+            </div>
+        </div>
+    </header>
 
-  <body>
-    <h1>Han Nay Aung's Home Page</h1>
+    <main>
+        <!-- About (自己紹介) -->
+        <section id="about" class="pt-20 pb-16 bg-paper-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-4xl font-bold text-gray-900 tracking-tight mb-2">Han Nay Aung</h1>
+                        <p class="text-xl text-secondary mb-6">博士後期課程</p>
 
-    <table>
-      <tr>
-	<td class="plain figure">
-          <figure>
-	    <img class="hfull" src="images/Han-2025.jpg" alt="HanNayAung">
-          </figure>
-	</td>	
-	<td>
-	  <p>
-	    <b>Han Nay Aung</b> received the B.Sc. and M.Sc. degrees
-	    in Information and Computer Sciences from Kwansei Gakuin
-	    University, Hyogo, Japan, in 2022 and 2024,
-	    respectively. He is currently pursuing a Ph.D. degree at
-	    the same university. He is a member of IEEE and IEICE.
-          </p>
+			<p class="text-lg text-gray-600 mb-4 leading-relaxed">
+			   現在、関西学院大学大学院 ネットワークアーキテクチャ研究室にて、博士後期課程の研究に従事しております。
+			  「高速かつ高信頼なネットワーク基盤の実現」を目標に掲げ、以下の3つの領域を軸として研究をしています。
+			  
+                        </p>
+              
+                        <ul class="list-disc list-inside text-lg text-gray-600 mb-8 leading-relaxed space-y-2 text-left inline-block md:block">
+                            <li>機械学習を用いたネットワークアーキテクチャの設計</li>
+                            <li>車載ネットワークの高信頼化およびその設計</li>
+                            <li>大規模グラフにおける探索および検索アルゴリズムの開発</li>
+                        </ul>
+			
 
-	  <p>English Version</p>
-	  <p>
-	    My research focuses on advancing the development of high-speed and highly reliable networks. 
-	    Currently, I work on three key areas:
-	  </p>
-	  <ol>
-	    <li>Designing network architectures using machine learning</li>
-	    <li>Developing functional safety systems for in-vehicle networks</li>
-	    <li>Designing exploration and search algorithms for large-scale graphs</li>
-	  </ol>
+                        <!-- リンクアイコン -->
+                        <div class="flex items-center justify-center md:justify-start space-x-5 mb-8">
+                            <a href="https://github.com/HanNayAung" target="_blank" class="text-gray-500 hover:text-black transition-colors text-2xl" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&hl=en" class="text-gray-500 hover:text-primary transition-colors text-2xl" title="Google Scholar">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://ieeexplore.ieee.org/author/37089966133" class="text-gray-500 hover:text-primary transition-colors text-2xl" title="IEEE Xplore">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                        </div>
 
-	  <p> 日本語版 </p>
-	  <p>
-	    私は、高速かつ高信頼性のネットワークの実現を目指し、以下の3つの研究テーマに取り組んでいます：
-	  </p>
-	  <ol>
-	    <li>機械学習を用いたネットワークアーキテクチャの設計</li>
-	    <li>車載ネットワークの高信頼化およびその設計</li>
-	    <li>大規模グラフにおける探索および検索アルゴリズムの開発</li>
-	  </ol>
+                        <!-- CVダウンロードボタン -->
+                        <div>
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+                                <i class="fas fa-file-pdf mr-2"></i> CVをダウンロード
+                            </a>
+                        </div>
+                    </div>
 
+                    <!-- プロフィール写真 -->
+                    <div class="flex-shrink-0">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 flex items-center justify-center text-gray-400 text-sm">
+                            <img src="images/Han-2025.jpg" alt="プロフィール写真" class="w-full h-full object-cover">
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	</td>
-      </tr>
-    </table>
-
-    
-    <h2> Research Themes / 研究キーワード</h2>
-    <table>
-      <tr>
-	<td style="width: 40%">
-          <p><b>Design, Modeling, and Control of High-speed and Highly Reliable  Communication Networks</b></p>
-          <ul>
-            <li>Large-Scale Network</li>
-	    <ul>
-	      <li>Information-Centric Networking (ICN) </li>
-	      <li>TCP/IP Network</li>
-	    </ul>
-            <li>Machine Learning</li>
-	     <ul>
-	       <li>Federated Learning</li>
-               <li>Reinforcement Learning</li>
-	       <li>Distributed online kernel-based learning</li>
-	       <li>Learning Model</li>
-	       <li>Markov Model</li>
-	     </ul>
-	     <li>Random Walks on Graphs</li>
-	      <ul>
-	      <li>Design new random walks </li>
-	      <li>Robustness of random Walks </li>
-	      </ul>
-	      
-             <li>Congestion Control Theory</li>
-	     <li>Network Performance Prediction Model</li>
-          </ul>
-	</td>
-    </table>
-
-
-
-    <h2> Publications / 出版物 (論文)</h2>
-    <table>
-      <tr>
-	<td class="half">
-          <h3>Research Papers</h3>
-          <ul>
-            <li><a href="./list-conference.html">List of Conference Papers</a></li>
-            <li><a href="./list-conference.html">List of Workshop Papers</a></li>
-	    <li><a href="./list-conference.html">List of Journal Papers</a></li>
-          </ul>
-
-	  <p> It is also possible to search from academic literature databases and other sources </p>
-
-	  <ul>
-	    <li>
-	      <a href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&hl=en">Google Scholar Researcher Profile </a>
-	    </li>
-	    <li>
-	      <a href="https://ieeexplore.ieee.org/author/37089966133">IEEE Xplore Paper Database </a>
-	    </li>
-	    <li>
-	      <a href="https://researchmap.jp/hannayaung"> Researchmap Database </a>
-	    </li>
-	  </ul>
-	</td>
-      </tr>
-    </table>
-
-
-    <h2> Scholarships and Research Grants / 奨学金および研究奨励金受賞 (すべて給付型奨学金) </h2>
-    <table>
-      <tr>
-	<td style="width: 100%">
-	  <ul>
-	    <li> Bachelor's program / 学部 </li>
-	    <ul>
-	      <li>
-		<a href="https://www.iuchizaidan.or.jp/index.html">
-		  井内財団の日本国際教育支援協会 (JEES) 冠奨学金井内ミャンマー留学生奨学金</a>
-		<br>
-		奨学金期限 2016 〜 2022、採択率 9.5%
-	      </li>
-	    </ul>
-	    
-	    <li> Master's program / 修士 </li>
-	    <ul>
-	      <li><a href="https://www.iwatani-foundation.or.jp/">
-		岩谷直治記念財団の岩谷奨学助成 </a>
-		<br>
-		奨学金期限 2022 〜 2024、採択率 10%
-	      </li>
-	      <li><a href="https://ciec.kwansei.ac.jp/study/foreign/assistance/?_gl=1*9blu5j*_gcl_au*MTU2NTk0ODA4NS4xNzQ0MjEwODIx">
-		関西学院大学 私費外国人留学生授業料減免</a>
-		<br>
-		奨学金期限 2022 〜 2024
-	      </li>
-	    </ul>
-
-	    <li> Doctoral program / 博士 </li>
-	    <ul>
-	      <li><a href="https://www.kwansei.ac.jp/graduate/scholarship/">
-		関西学院大学 大学院博士課程後期課程研究奨励金 </a>
-		<br>
-		採用期限 2024 〜 2025、採用者年間 25 名
-              </li>
-	      <li><a href="https://www.kwansei.ac.jp/graduate/scholarship/">
-		関西学院大学 大学院研究者育成奨励金 </a>
-		<br>
-		採用期限 2025 〜 2026
-	      </li>
-	      <li><a href="https://ciec.kwansei.ac.jp/study/foreign/assistance/?_gl=1*9blu5j*_gcl_au*MTU2NTk0ODA4NS4xNzQ0MjEwODIx">
-		関西学院大学 私費外国人留学生授業料減免 </a>
-		<br>
-		奨学金期限 2024 〜 2026
-	      </li>
-	      <li> <a href="https://www.disclo-koeki.org/07a/00932/index.html">
-		千趣留学生奨学財団の留学生奨学金 </a> 
-		<br>
-		奨学金期限 2024 〜 現在まで、2024 年の採用人数 5 名  
-	      </li>
-	    </ul>
-	</td>
-    </table>
+        <!-- News セクション -->
+        <section id="news" class="py-16 bg-paper">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-primary pb-2 inline-block">ニュース</h2>
+            
+            <div class="bg-paper-light rounded-lg shadow-sm border border-gray-200 p-6">
+              <ul class="space-y-4">
 
 
-    <h2>Awards for Research and Academic Activities / 研究と研究活動に関する賞</h2>
-    <table>
-      <tr>
-	<td style="width: 100%">
-	  <ul>
-	    <li> International Conferences / 国際学会 </li>
-	    <ul>
-	      <li> Y. Takesada and Han Nay Aung and R. Nakamura and H. Ohsaki, <br>
-		International Conference on Information Networking (ICOIN), Best Paper Award (2025 年 1 月) </li>
-	    </ul>
+		<li class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+                  <span class="text-sm font-semibold text-primary w-32 flex-shrink-0">2026年 6月</span>
+                  <p class="text-gray-700">論文 "Random Walks on Complex Networks Using Node Embedding Vectors" が<br>
+		    <em class="font-medium">Journal of Information Processing (Special issue "Applications and the Internet", in conjunction with COMPSAC)</em>
+		    に採録決定しました。
+		  </p>
+                 </li>
 
-	    <li>Domestic Conferences / 国内学会 </li>
-	    <ul>
-	      <li> Han Nay Aung, Workshop on Internet Architecture and Applications Students Studies
-		(2024 年 10 月)
-	      </li>
-	      <li> Han Nay Aung, Workshop on Internet Architecture and Applications Students Studies
-		(2024 年 1 月)
-	      </li>
-	      <li> Han Nay Aung, ソサエティインターネットアーキテクチャ研究会学生研究奨励賞を受賞
-		(2022 年 9 月)
-	      </li>
-	    </ul>
-
-	    <li> Best Poster Award  / ポスター優秀賞 </li>
-	    <ul>
-	      <li> 椎名 智、Han Nay Aung、大崎 博之, <br>
-		Workshop on Internet Architecture and Applications 2025 (2025 年 11 月) </li>
-	      </li>
-	    </ul>
-	    
-	    <li>Kwansei Gakuin University / 関西学院大学 </li>
-	    <ul>
-	      <li> Han Nay Aung, 関西学院大学 仁田記念賞を受賞  (2025 年 1 月)
-		<br> 採用人数 各研究科から 1 名
-	      </li>
-	    </ul>
-
-	    <li> Other / その他 </li>
-	    <ul>
-	      <li> Han Nay Aung 電子情報通信学会 学生会幹事 功労賞 (2024 年 3 月)
-	      </li>
-	    </ul>
-	</td>
-    </table>
-
-
-
-
-
-
-    <h2> 研究以外の実績およびボランティア活動 </h2>
-    <table>
-      <tr>
-	<td style="width: 100%">
+		<li class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+                  <span class="text-sm font-semibold text-primary w-32 flex-shrink-0">2026年 6月</span>
+                  <p class="text-gray-700">論文 "Local Random Walks on Complex Graphs with Partial Non-Local Information" が<br>
+		    <em class="font-medium">Journal of Information Processing (Special issue "Applications and the Internet", in conjunction with COMPSAC)</em>
+		    に採録決定しました。
+		  </p>
+                 </li>
+		 
+                 <li class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
+                   <span class="text-sm font-semibold text-primary w-32 flex-shrink-0">2026年 6月</span>
+                   <p class="text-gray-700">ウェブサイトをリニューアルしました。</p>
+                 </li>
+		 
+              </ul>
+            </div>
+          </div>
+        </section>
 	
-	  <ul>
-	    <li>
-	      2024年、将来の大学教員養成を目的とした関西学院大学のプレ
-	      FDプログラムに参加し、全課程を修了した。プログラムでは、
-	      教育実践・授業設計・学生支援に関する基礎的素養を修得した。
-	    </li>
-	    <li>
-	      2022 年から 2024 年までボランティアとして電子情報通信学
-	      会関西支部 （The Institute of electronics, Information
-	      and Communication Engineers Kansai）の幹事学生として活動
-	      した。それの活動として、2022
-	      年 3 月に大阪大学吹田キャンパスで開催された “電子情報通
-	      信学会 関西支部 第 27 回学生会研究発表講演会” でセッションの福座長と
-	      して活動し、2023 年 3 月に関西大学千里山キャンパスで開催
-	      される “電子情報通信学会 関西支部 第 28 回学生会研究発表
-	      講演会” ではセッションの座長として活躍した。
-	    </li>
-	    <li> 修士課程の時、ティーチング アシスタントー (教学補佐)
-	      として採用され、情報科学科目のティーチングアシスタントと
-	      して務めていた。
-	    </li>
-	    <li> 学部 2 年生の頃から、関西学院大学における英語系科目の
-	      ラーニングアシスタントとして採用され、理工学部の英語科目
-	      の補佐を務めた。その時、学科全体 (約 70
-	      人)から英語系科目のラーニングアシスタントとして採用さ
-	      れた学生は私を含めて 2人である。
-	    </li>
-	    <li> 日本の日本語教育センターに在学中、上位の成績者として認
-	    められ、平成 29 年の卒業式で在校生代表として選ばれ、送辞を
-	      述べた。
-	    </li>
-	  </ul>
-	</td>
-    </table>
+        <!-- Experience セクション -->
+        <section id="experience" class="py-16 bg-paper-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- 教育 -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary pb-2 inline-block">教育</h2>
+                        <div class="space-y-6">
+                            <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">博士課程 (工学)</h3>
+                                <p class="text-gray-600 text-sm mb-1">関西学院大学大学院、理工学研究科、情報科学専攻、博士後期課程</p>
+                                <p class="text-gray-500 text-sm font-medium">2024年4月 - 現在</p>
+                            </div>
+                            <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">修士課程 (工学)</h3>
+                                <p class="text-gray-600 text-sm mb-1">関西学院大学大学院、理工学研究科、情報科学専攻、博士前期課程</p>
+                                <p class="text-gray-500 text-sm font-medium">2022年4月 - 2024年3月</p>
+                            </div>
+                            <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">学士 (情報科学)</h3>
+                                <p class="text-gray-600 text-sm mb-1">関西学院大学、理工学部、情報科学科</p>
+                                <p class="text-gray-500 text-sm font-medium">2018年4月 - 2022年3月</p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- 教育補佐 -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-primary pb-2 inline-block">教育補佐</h2>
+                        <div class="space-y-6">
+			   <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">ティーチングアシスタント (TA)</h3>
+                                <p class="text-gray-600 text-sm mt-2 leading-relaxed">博士課程3年生の時、特別教学補佐として採用され、情報科学科目のティーチングアシスタントを務めている。</p>
+                           </div>
+			   
+                            <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-gray-300  rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">ティーチングアシスタント (TA)</h3>
+                                <p class="text-gray-600 text-sm mt-2 leading-relaxed">修士課程の時、教学補佐として採用され、情報科学科目のティーチングアシスタントを務めた。</p>
+                            </div>
+                            <div class="relative pl-6 border-l-2 border-gray-200">
+                                <div class="absolute w-3 h-3 bg-gray-300 rounded-full -left-[7px] top-2"></div>
+                                <h3 class="font-bold text-gray-900">ラーニングアシスタント (LA)</h3>
+                                <p class="text-gray-600 text-sm mt-2 leading-relaxed">学部2年生の頃から、関西学院大学における英語系科目のラーニングアシスタントとして採用され、
+				  理工学部の英語科目の補佐を務めた。その際、学科全体 (約70人) から英語系科目のラーニングアシスタントとして採用された学生は、私を含めて2人のみである。</p>
+                            </div>
+                        </div>
+                    </div>
 
-    <h2> Original Software / オリジナルソフトウェ開発 </h2>
-    <table>
-      <tr>
-	<td style="width: 100%">
-	  <ul>
-	    <li> ネットワーキング </li>
-	    <ul>
-	      <li><a href="https://github.com/hannayaung"> PyChat </a> -- A simple implementation of a chat app using the sockets library.
-	      </li>
-	    </ul>
-	  </ul>	  
-	  <ul>
-	    <li> 研究 </li>
-	    <ul>
-	      <li><a href="https://github.com/hannayaung"> Research Life Kit </a> -- Ruby-based gem designed to help researchers manage various aspects of their daily work. It provides tools for tasks such as retrieving information from websites, managing keywords, and handling research-related data. </li>
-	    </ul>
-	  </ul>  
-	  
-	</td>
-    </table>
+                </div>
+            </div>
+        </section>
 
+        <!-- Awards & Scholarships セクション -->
+        <section id="awards" class="py-16 bg-paper">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Scholarships -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2 border-b-2 border-primary pb-2 inline-block">奨学金および研究奨励金 (すべて給付型)</h2>
+                        <p class="text-sm text-gray-600 mb-4 font-medium">Scholarships and Grants</p>
+                        
+                        <h3 class="text-lg font-bold text-primary mt-6 mb-3 border-l-4 border-primary pl-2">Doctoral program / 博士</h3>
+                        <ul class="space-y-3">
+			   <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">千趣留学生奨学財団の留学生奨学金</h4>
+                                <div class="text-sm text-gray-600 mt-1 flex flex-wrap gap-x-4">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 奨学金期限 2024 〜 2027</span>
+                                    <span><i class="fas fa-users mr-1"></i> 2024年の採用人数 5名</span>
+                                </div>
+                           </li>
 
-    <h2>研究室ゼミで紹介した内容 (紹介者 Han Nay Aung)</h2>
-    <table>
-      <tr>
-	<td style="width: 100%">
-	  <!-- 2024年度 -->
-	  <ul>
-            <li>2024-04-17 科学論文とは、研究テーマ決定の原則</li>
-            <li>2024-05-15 問題解決 (Problem Solving)</li>
-            <li>2024-10-23 科学研究倫理教育</li>
-            <li>2024-11-13 研究発表用の独自Beamerテーマ作成方法</li>
-            <li>2024-12-04 PyChat & ネットワークパケット解析</li>
-	  </ul>
-	  <!-- 2025年度 -->
-	  <ul>
-            <li>2025-04-23 一流研究者への第一歩：科学論文の基本と研究テーマ決定の原則</li>
-            <li>2025-08-05 How to create slides (動画あり)</li>
-            <li>2025-10-08 科学的思考法：問いの立て方と実験のデザイン</li>
-            <li>2025-11-25 Animating Research with Blender, Manim, and Cellx: 3D and 2D Visualization</li>
-	  </ul>
+			    <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">関西学院大学 私費外国人留学生授業料減免</h4>
+                                <div class="text-sm text-gray-600 mt-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 奨学金期限 2024 〜 2027</span>
+                                </div>
+                            </li>
+			    
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">関西学院大学 大学院研究者育成奨励金</h4>
+                                <div class="text-sm text-gray-600 mt-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 採用期限 2025 〜 2026</span>
+                                </div>
+                            </li>
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">関西学院大学 大学院博士課程後期課程研究奨励金</h4>
+                                <div class="text-sm text-gray-600 mt-1 flex flex-wrap gap-x-4">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 採用期限 2024 〜 2025</span>
+                                    <span><i class="fas fa-users mr-1"></i> 採用者年間 25名</span>
+                                </div>
+                            </li>
+                   
+                        </ul>
 
-	</td>
-      </tr>
-    </table>
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Master's program / 修士</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">岩谷直治記念財団の岩谷奨学助成</h4>
+                                <div class="text-sm text-gray-600 mt-1 flex flex-wrap gap-x-4">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 奨学金期限 2022 〜 2024</span>
+                                    <span><i class="fas fa-chart-pie mr-1"></i> 採択率 10%</span>
+                                </div>
+                            </li>
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">関西学院大学 私費外国人留学生授業料減免</h4>
+                                <div class="text-sm text-gray-600 mt-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 奨学金期限 2022 〜 2024</span>
+                                </div>
+                            </li>
+                        </ul>
 
-    <footer>
-      <p>Copyright &copy; Dec. 2025 Han Nay Aung. All rights reserved.</p>
-      <p> *The design is based on the homepage of Professor. Ohsaki Hiroyuki.* </p>
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Bachelor's program / 学部</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800 leading-snug">井内財団の日本国際教育支援協会 (JEES) <br class="hidden sm:block">冠奨学金井内ミャンマー留学生奨学金</h4>
+                                <div class="text-sm text-gray-600 mt-2 flex flex-wrap gap-x-4">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 奨学金期限 2016 〜 2022</span>
+                                    <span><i class="fas fa-chart-pie mr-1"></i> 採択率 9.5%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Awards -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2 border-b-2 border-primary pb-2 inline-block">研究・学術賞</h2>
+                        <p class="text-sm text-gray-600 mb-4 font-medium">Awards for Research and Academic Activities</p>
+
+                        <h3 class="text-lg font-bold text-primary mt-6 mb-3 border-l-4 border-primary pl-2">International Conferences / 国際学会</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                              <h4 class="font-bold text-gray-800">International Conference on Information Networking (ICOIN),  Best Paper Award</h4>
+			         <div class="mt-2 text-gray-700">
+                                    <p class="font-medium">Q-AIMD: AIMD-based Window Flow Control with Reinforcement Learning</p>
+                                    <p class="text-sm mt-0.5">Yuta Takesada、Han Nay Aung、Ryo Nakamura、Hiroyuki Ohsaki</p>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-3">
+                                    <i class="far fa-calendar-alt mr-1"></i> 2025年1月
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Domestic Conferences / 国内学会</h3>
+                        <ul class="space-y-3">
+
+                          <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-gray-800">電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+                            <div class="mt-2 text-gray-700">
+                              <p class="font-medium">Study of Random Walks on a Graph utilizing Embedding Vectors of Partial Nodes</p>
+                              <p class="text-sm mt-0.5">Han Nay Aung</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-3">
+                              <i class="far fa-calendar-alt mr-1"></i> 2024年10月
+                            </div>
+                          </li>
+			  
+                          <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-gray-800 ">電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+                            <div class="mt-2 text-gray-700">
+                              <p class="font-medium">Study on the Effectiveness of Building TCP Throughput Prediction Model using Federated Learning</p>
+                              <p class="text-sm mt-0.5">Han Nay Aung</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-3">
+                              <i class="far fa-calendar-alt mr-1"></i> 2024年1月
+                            </div>
+                          </li>
+			  
+                          <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-gray-800">電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+                            <div class="mt-2 text-gray-700">
+                              <p class="font-medium">情報指向ネットワークにおける TCP 輻輳回避アルゴリズムの有効性に関する検討</p>
+                              <p class="text-sm mt-0.5">Han Nay Aung</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-3">
+                              <i class="far fa-calendar-alt mr-1"></i> 2022年9月
+                            </div>
+                          </li>
+                        </ul>
+
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Best Poster Award / ポスター優秀賞</h3>
+                        <ul class="space-y-3">
+			  <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-gray-800">電子情報通信学会 インターネットアーキテクチャ研究会</h4>
+                            <div class="mt-2 text-gray-700">
+                              <p class="font-medium">ランダムウォークを用いた隠密通信の通信性能評価</p>
+                              <p class="text-sm mt-0.5">椎名 智、Han Nay Aung、大崎 博之</p>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-3">
+                              <i class="far fa-calendar-alt mr-1"></i> 2025年11月
+                            </div>
+                          </li>
+                        </ul>
+
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Kwansei Gakuin Univ. / 関西学院大学</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">関西学院大学 仁田記念賞</h4>
+                                <p class="text-sm text-gray-700 mt-1">Han Nay Aung</p>
+                                <div class="text-sm text-gray-500 mt-1 flex flex-wrap gap-x-4">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 2025年1月</span>
+                                    <span><i class="fas fa-trophy mr-1"></i> 採用人数: 各研究科から1名</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3 class="text-lg font-bold text-primary mt-8 mb-3 border-l-4 border-primary pl-2">Other / その他</h3>
+                        <ul class="space-y-3">
+                            <li class="bg-paper-light p-4 rounded shadow-sm border border-gray-200">
+                                <h4 class="font-bold text-gray-800">電子情報通信学会 学生会幹事 功労賞</h4>
+                                <p class="text-sm text-gray-700 mt-1">Han Nay Aung</p>
+                                <div class="text-sm text-gray-500 mt-1">
+                                    <span><i class="far fa-calendar-alt mr-1"></i> 2024年3月</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities セクション -->
+        <section id="activities" class="py-16 bg-paper-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-primary pb-2 inline-block">研究以外の実績およびボランティア活動</h2>
+                
+                <div class="bg-paper-light rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8">
+                    <ul class="space-y-6">
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i class="fas fa-certificate text-primary text-xl"></i></div>
+                            <p class="text-gray-700 leading-relaxed">
+                                <span class="font-bold text-gray-900 block mb-1">関西学院大学 プレFDプログラム修了</span>
+                                2024年、将来の大学教員養成を目的とした関西学院大学のプレFDプログラムに参加し、全課程を修了した。プログラムでは、教育実践・授業設計・学生支援に関する基礎的素養を修得した。
+                            </p>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i class="fas fa-hands-helping text-primary text-xl"></i></div>
+                            <p class="text-gray-700 leading-relaxed">
+                              <span class="font-bold text-gray-900 block mb-1">電子情報通信学会関西支部 幹事学生</span>
+			      2022年から2024年までボランティアとして電子情報通信学会関西支部（The Institute of electronics, Information and Communication Engineers
+			      Kansai）の幹事学生として活動した。その活動として、2022年3月に大阪大学吹田キャンパスで開催された「電子情報通信学会 関西支部 第27回学生会研究発表講演会」で
+			      セッションの副座長として活動し、2023年3月に関西大学千里山キャンパスで開催された「電子情報通信学会 関西支部 第28回学生会研究発表講演会」ではセッションの座長として活躍した。
+                            </p>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="flex-shrink-0 mt-1"><i class="fas fa-microphone-alt text-primary text-xl"></i></div>
+                            <p class="text-gray-700 leading-relaxed">
+                                <span class="font-bold text-gray-900 block mb-1">卒業式 在校生代表 送辞</span>
+                                日本の日本語教育センターに在学中、上位の成績者として認められ、平成29年の卒業式で在校生代表として選ばれ、送辞を述べた。
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm mb-4">
+                &copy; <span id="current-year"></span> 名前 苗字. All rights reserved.
+            </p>
+            <p class="text-gray-500 text-xs">
+                Built with <a href="https://tailwindcss.com/" target="_blank" class="hover:text-white transition-colors">Tailwind CSS</a>.
+            </p>
+        </div>
     </footer>
-  </body>
+
+    <!-- スクリプト -->
+    <script>
+        // フッターの年を自動更新
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // モバイルメニューのトグル機能
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // モバイルメニュー内のリンクをクリックしたらメニューを閉じる
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>
