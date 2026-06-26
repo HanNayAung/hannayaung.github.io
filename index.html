@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>HAN NAY AUNG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1:#0b1020;
+    --bg-2:#070a14;
+    --ink:#e8ecf5;
+    --ink-soft:#aab4c8;
+    --ink-faint:#7a8499;
+    --line:rgba(255,255,255,.10);
+    --accent:#818cf8;
+    --accent-soft:#a5b4fc;
+    --teal:#2dd4bf;
+    --card:rgba(17,24,42,.55);
+    --card-solid:rgba(17,24,42,.82);
+    --font-display:'Space Grotesk','Zen Kaku Gothic New',sans-serif;
+    --font-jp:'Zen Kaku Gothic New','Space Grotesk',sans-serif;
+    --font-body:'Inter','Noto Sans JP',sans-serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    line-height:1.7;
+    background:
+      radial-gradient(1200px 760px at 80% -12%, rgba(129,140,248,.16) 0%, rgba(129,140,248,0) 60%),
+      radial-gradient(900px 600px at 8% 112%, rgba(45,212,191,.08) 0%, rgba(45,212,191,0) 55%),
+      linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---- network background ---- */
+  #network-bg{
+    position:fixed; inset:0;
+    width:100%; height:100%;
+    z-index:0;
+    pointer-events:none;
+  }
+  .page{position:relative; z-index:1}
+
+  /* ---- header ---- */
+  header{
+    position:sticky; top:0; z-index:20;
+    backdrop-filter:saturate(140%) blur(12px);
+    background:rgba(8,12,22,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:.85rem 1.5rem;
+  }
+  .brand{
+    font-family:var(--font-display); font-weight:700;
+    letter-spacing:-.01em; font-size:1.05rem; color:var(--ink);
+    text-decoration:none; display:flex; align-items:center; gap:.55rem;
+  }
+  .brand .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 4px rgba(129,140,248,.28);
+  }
+  .nav-links{display:flex; gap:.35rem; align-items:center; flex-wrap:wrap}
+  .nav-links a{
+    font-size:.86rem; color:var(--ink-soft); text-decoration:none;
+    padding:.4rem .6rem; border-radius:8px; transition:.18s; white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--accent); background:rgba(129,140,248,.12)}
+  .nav-links a.cta{
+    color:#0b1020; background:var(--accent); font-weight:600;
+  }
+  .nav-links a.cta:hover{background:var(--accent-soft)}
+  .menu-btn{display:none}
+
+  /* ---- layout ---- */
+  main{max-width:var(--maxw); margin:0 auto; padding:0 1.5rem}
+  section{padding:4.5rem 0; scroll-margin-top:84px}
+  .eyebrow{
+    font-family:var(--font-display); font-weight:500;
+    text-transform:uppercase; letter-spacing:.18em;
+    font-size:.72rem; color:var(--accent);
+    display:flex; align-items:center; gap:.7rem; margin-bottom:1rem;
+  }
+  .eyebrow::before{
+    content:""; width:26px; height:2px; background:var(--accent); border-radius:2px;
+  }
+  h2.section-title{
+    font-family:var(--font-jp); font-weight:700;
+    font-size:clamp(1.5rem,3.4vw,2rem); letter-spacing:-.01em;
+    color:var(--ink); margin-bottom:.3rem;
+  }
+  .section-sub{color:var(--ink-faint); font-size:.9rem; margin-bottom:2rem}
+
+  /* ---- hero ---- */
+  .hero{
+    display:grid; grid-template-columns:1.35fr .9fr; gap:3rem;
+    align-items:center; padding:5.5rem 0 4rem;
+  }
+  .hero-kicker{
+    font-family:var(--font-display); font-weight:500;
+    text-transform:uppercase; letter-spacing:.2em; font-size:.74rem;
+    color:var(--accent); margin-bottom:1.1rem;
+  }
+  .hero h1{
+    font-family:var(--font-display); font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.4rem); line-height:1.02;
+    letter-spacing:-.03em; color:var(--ink);
+  }
+  .hero .jp-title{
+    font-family:var(--font-jp); font-weight:500;
+    font-size:1.1rem; color:var(--ink-soft); margin:.7rem 0 1.4rem;
+  }
+  .hero p.lead{
+    font-family:var(--font-body);
+    font-size:1rem; color:var(--ink-soft); max-width:46ch; margin-bottom:1.4rem;
+  }
+  .research-list{list-style:none; display:grid; gap:.6rem; margin-bottom:1.8rem}
+  .research-list li{
+    position:relative; padding-left:1.5rem;
+    font-size:.95rem; color:var(--ink);
+  }
+  .research-list li::before{
+    content:""; position:absolute; left:0; top:.62em;
+    width:7px; height:7px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px rgba(129,140,248,.22);
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:.7rem; align-items:center}
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:var(--font-body); font-weight:500; font-size:.9rem;
+    padding:.62rem 1.1rem; border-radius:10px; text-decoration:none;
+    transition:.18s; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent); color:#0b1020}
+  .btn-primary:hover{background:var(--accent-soft); transform:translateY(-1px)}
+  .icon-links{display:flex; gap:.4rem}
+  .icon-links a{
+    width:40px; height:40px; display:grid; place-items:center;
+    border-radius:10px; border:1px solid var(--line);
+    background:var(--card-solid); color:var(--ink-soft); transition:.18s;
+  }
+  .icon-links a:hover{color:var(--accent); border-color:var(--accent); transform:translateY(-1px)}
+  .icon-links svg{width:19px;height:19px}
+
+  .hero-photo{justify-self:center; position:relative}
+  .hero-photo .frame{
+    position:relative; width:min(300px,72vw); aspect-ratio:4/5;
+    border-radius:18px; overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 24px 60px -28px rgba(15,23,42,.4);
+    background:var(--card-solid);
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block}
+  .hero-photo .tag{
+    position:absolute; left:-14px; bottom:18px;
+    background:var(--card-solid); border:1px solid var(--line); border-radius:12px; backdrop-filter:blur(8px);
+    padding:.5rem .8rem; font-size:.78rem; color:var(--ink-soft);
+    box-shadow:0 12px 30px -18px rgba(15,23,42,.45);
+    display:flex; align-items:center; gap:.5rem;
+  }
+  .hero-photo .tag .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--teal);
+    box-shadow:0 0 0 0 rgba(13,148,136,.5); animation:pulse 2.2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(13,148,136,.45)}
+    70%{box-shadow:0 0 0 9px rgba(13,148,136,0)}
+    100%{box-shadow:0 0 0 0 rgba(13,148,136,0)}
+  }
+
+  /* ---- cards / generic ---- */
+  .card{
+    background:var(--card);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--line);
+    border-radius:14px; padding:1.4rem 1.5rem;
+  }
+  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+
+  /* news */
+  .news-list{display:grid; gap:.9rem}
+  .news-item{
+    display:grid; grid-template-columns:120px 1fr; gap:1rem;
+    align-items:start; background:var(--card); backdrop-filter:blur(8px);
+    border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:12px; padding:1.1rem 1.3rem;
+  }
+  .news-date{
+    font-family:var(--font-display); font-weight:500; font-size:.82rem;
+    color:var(--accent); white-space:nowrap;
+  }
+  .news-item p{font-size:.93rem; color:var(--ink)}
+  .news-item em{color:var(--ink-faint); font-style:italic}
+
+  /* timeline-ish education */
+  .edu-card h3{font-family:var(--font-jp); font-weight:700; font-size:1.05rem; margin-bottom:.25rem}
+  .edu-card .org{font-size:.9rem; color:var(--ink-soft)}
+  .edu-card .period{
+    font-family:var(--font-display); font-size:.8rem; color:var(--accent);
+    margin-top:.5rem; display:inline-block;
+  }
+  .edu-card p.desc{font-size:.9rem; color:var(--ink-soft); margin-top:.5rem}
+
+  /* group blocks (scholarships / awards) */
+  .group{margin-bottom:2.2rem}
+  .group:last-child{margin-bottom:0}
+  .group-label{
+    font-family:var(--font-display); font-weight:500; font-size:.78rem;
+    text-transform:uppercase; letter-spacing:.12em; color:var(--ink-faint);
+    margin-bottom:1rem; padding-bottom:.5rem; border-bottom:1px dashed var(--line);
+  }
+  .item{
+    background:var(--card); backdrop-filter:blur(8px);
+    border:1px solid var(--line); border-radius:12px;
+    padding:1.05rem 1.2rem; margin-bottom:.75rem;
+  }
+  .item:last-child{margin-bottom:0}
+  .item h4{font-family:var(--font-jp); font-weight:700; font-size:.98rem; margin-bottom:.3rem; line-height:1.5}
+  .item .meta{font-size:.84rem; color:var(--ink-faint)}
+  .item .authors{font-size:.86rem; color:var(--ink-soft); margin-top:.25rem}
+  .award-cat{
+    font-family:var(--font-jp); font-weight:700; font-size:1rem;
+    color:var(--accent); margin:1.6rem 0 .9rem;
+  }
+  .award-cat:first-child{margin-top:0}
+
+  /* activities */
+  .act-list{display:grid; gap:1rem}
+  .act-item{
+    display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:start;
+    background:var(--card); backdrop-filter:blur(8px);
+    border:1px solid var(--line); border-radius:12px; padding:1.15rem 1.3rem;
+  }
+  .act-num{
+    font-family:var(--font-display); font-weight:700; font-size:.9rem;
+    color:#0b1020; background:var(--accent); width:30px; height:30px;
+    border-radius:8px; display:grid; place-items:center;
+  }
+  .act-item h4{font-family:var(--font-jp); font-weight:500; font-size:.95rem; margin-bottom:.3rem}
+  .act-item p{font-size:.88rem; color:var(--ink-soft)}
+
+  /* footer */
+  footer{
+    position:relative; z-index:1;
+    border-top:1px solid var(--line);
+    background:rgba(8,12,22,.6); backdrop-filter:blur(8px);
+    text-align:center; padding:2.2rem 1.5rem;
+    color:var(--ink-faint); font-size:.85rem;
+  }
+
+  a:focus-visible, .btn:focus-visible, .icon-links a:focus-visible{
+    outline:2px solid var(--accent); outline-offset:3px; border-radius:8px;
+  }
+
+  /* responsive */
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr; gap:2.2rem; padding:3.5rem 0 2.5rem; text-align:left}
+    .hero-photo{order:-1; justify-self:start}
+    .grid-2,.grid-3{grid-template-columns:1fr}
+    .nav-links{display:none; position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:stretch; gap:.2rem;
+      background:rgba(11,16,32,.97); border-bottom:1px solid var(--line);
+      padding:.8rem 1.2rem 1.1rem;}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:.65rem .5rem}
+    .menu-btn{display:grid; place-items:center; width:42px; height:42px;
+      border:1px solid var(--line); border-radius:10px; background:var(--card-solid); cursor:pointer}
+    .news-item{grid-template-columns:1fr; gap:.35rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero-photo .tag .pulse{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="network-bg" aria-hidden="true"></canvas>
+
+<div class="page">
+<header>
+  <nav class="nav">
+    <a class="brand" href="#about"><span class="dot"></span>Han Nay Aung</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aab4c8" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links" id="navlinks">
+      <a href="#about">ホーム</a>
+      <a href="#news">ニュース</a>
+      <a href="#experience">経歴</a>
+      <a href="#awards">受賞・奨学金</a>
+      <a href="#activities">活動</a>
+      <a class="cta" href="https://www.hn-aung.org/publications.html">業績</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="about" class="hero">
+    <div class="hero-text">
+      <div class="hero-kicker">Ph.D. Candidate · Network Architecture</div>
+      <h1>Han Nay Aung</h1>
+      <div class="jp-title">博士後期課程 — 関西学院大学 ネットワークアーキテクチャ研究室</div>
+      <p class="lead">「高速かつ高信頼なネットワーク基盤の実現」を目標に掲げ、機械学習・車載ネットワーク・大規模グラフ探索を軸として研究しています。</p>
+      <ul class="research-list">
+        <li>機械学習を用いたネットワークアーキテクチャの設計</li>
+        <li>車載ネットワークの高信頼化およびその設計</li>
+        <li>大規模グラフにおける探索および検索アルゴリズムの開発</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#">CVをダウンロード</a>
+        <div class="icon-links">
+          <a href="https://github.com/HanNayAung" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 8.5 12 15l9-5.3V16h2V8.5L12 2zM5 13.2v3.3c0 1.9 3.1 3.5 7 3.5s7-1.6 7-3.5v-3.3l-7 4.1-7-4.1z"/></svg>
+          </a>
+          <a href="https://ieeexplore.ieee.org/author/37089966133" title="IEEE Xplore" aria-label="IEEE Xplore">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h3v18H5V3zm5.5 0h3v18h-3V3zM16 3h3v18h-3V3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">
+        <img src="https://www.hn-aung.org/images/Han-2025.jpg" alt="Han Nay Aung プロフィール写真" loading="lazy">
+      </div>
+      <div class="tag"><span class="pulse"></span>関西学院大学大学院 D2</div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="eyebrow">News</div>
+    <h2 class="section-title">ニュース</h2>
+    <p class="section-sub">最近の研究・活動のアップデート</p>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">2026.06</span>
+        <p>論文 "Random Walks on Complex Networks Using Node Embedding Vectors" が <em>Journal of Information Processing (Special issue "Applications and the Internet", in conjunction with COMPSAC)</em> に採録決定しました。</p>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.06</span>
+        <p>論文 "Local Random Walks on Complex Graphs with Partial Non-Local Information" が <em>Journal of Information Processing (Special issue "Applications and the Internet", in conjunction with COMPSAC)</em> に採録決定しました。</p>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.06</span>
+        <p>ウェブサイトをリニューアルしました。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE / EDUCATION -->
+  <section id="experience">
+    <div class="eyebrow">Education &amp; Teaching</div>
+    <h2 class="section-title">経歴</h2>
+    <p class="section-sub">学歴および教育補佐の経験</p>
+
+    <div class="group">
+      <div class="group-label">教育 / Education</div>
+      <div class="grid-3">
+        <div class="card edu-card">
+          <h3>博士課程 (工学)</h3>
+          <div class="org">関西学院大学大学院 理工学研究科 情報科学専攻 博士後期課程</div>
+          <span class="period">2024.04 — 現在</span>
+        </div>
+        <div class="card edu-card">
+          <h3>修士課程 (工学)</h3>
+          <div class="org">関西学院大学大学院 理工学研究科 情報科学専攻 博士前期課程</div>
+          <span class="period">2022.04 — 2024.03</span>
+        </div>
+        <div class="card edu-card">
+          <h3>学士 (情報科学)</h3>
+          <div class="org">関西学院大学 理工学部 情報科学科</div>
+          <span class="period">2018.04 — 2022.03</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label">教育補佐 / Teaching Assistance</div>
+      <div class="grid-3">
+        <div class="card edu-card">
+          <h3>ティーチングアシスタント (TA)</h3>
+          <p class="desc">博士課程3年次に特別教学補佐として採用され、情報科学科目のTAを務めている。</p>
+        </div>
+        <div class="card edu-card">
+          <h3>ティーチングアシスタント (TA)</h3>
+          <p class="desc">修士課程の時、教学補佐として採用され、情報科学科目のTAを務めた。</p>
+        </div>
+        <div class="card edu-card">
+          <h3>ラーニングアシスタント (LA)</h3>
+          <p class="desc">学部2年次より英語系科目のLAとして採用。学科全体(約70人)から英語系LAに選ばれた学生は私を含め2名のみ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS & SCHOLARSHIPS -->
+  <section id="awards">
+    <div class="eyebrow">Honors</div>
+    <h2 class="section-title">受賞・奨学金</h2>
+    <p class="section-sub">奨学金・研究奨励金、および研究・学術賞（すべて給付型）</p>
+
+    <!-- Scholarships -->
+    <div class="group">
+      <div class="group-label">奨学金・研究奨励金 / Scholarships &amp; Grants</div>
+
+      <div class="award-cat">Doctoral program / 博士</div>
+      <div class="item"><h4>千趣留学生奨学財団の留学生奨学金</h4><div class="meta">奨学金期限 2024〜2027 ／ 2024年採用人数 5名</div></div>
+      <div class="item"><h4>関西学院大学 私費外国人留学生授業料減免</h4><div class="meta">奨学金期限 2024〜2027</div></div>
+      <div class="item"><h4>関西学院大学 大学院研究者育成奨励金</h4><div class="meta">採用期限 2025〜2026</div></div>
+      <div class="item"><h4>関西学院大学 大学院博士課程後期課程研究奨励金</h4><div class="meta">採用期限 2024〜2025 ／ 採用者年間 25名</div></div>
+
+      <div class="award-cat">Master's program / 修士</div>
+      <div class="item"><h4>岩谷直治記念財団の岩谷奨学助成</h4><div class="meta">奨学金期限 2022〜2024 ／ 採択率 10%</div></div>
+      <div class="item"><h4>関西学院大学 私費外国人留学生授業料減免</h4><div class="meta">奨学金期限 2022〜2024</div></div>
+
+      <div class="award-cat">Bachelor's program / 学部</div>
+      <div class="item"><h4>井内財団 日本国際教育支援協会(JEES) 冠奨学金 井内ミャンマー留学生奨学金</h4><div class="meta">奨学金期限 2016〜2022 ／ 採択率 9.5%</div></div>
+    </div>
+
+    <!-- Awards -->
+    <div class="group">
+      <div class="group-label">研究・学術賞 / Awards for Research &amp; Academic Activities</div>
+
+      <div class="award-cat">International Conferences / 国際学会</div>
+      <div class="item">
+        <h4>ICOIN — Best Paper Award</h4>
+        <div class="meta">Q-AIMD: AIMD-based Window Flow Control with Reinforcement Learning ／ 2025年1月</div>
+        <div class="authors">Yuta Takesada, Han Nay Aung, Ryo Nakamura, Hiroyuki Ohsaki</div>
+      </div>
+
+      <div class="award-cat">Domestic Conferences / 国内学会</div>
+      <div class="item">
+        <h4>電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+        <div class="meta">Study of Random Walks on a Graph utilizing Embedding Vectors of Partial Nodes ／ 2024年10月</div>
+        <div class="authors">Han Nay Aung</div>
+      </div>
+      <div class="item">
+        <h4>電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+        <div class="meta">Study on the Effectiveness of Building TCP Throughput Prediction Model using Federated Learning ／ 2024年1月</div>
+        <div class="authors">Han Nay Aung</div>
+      </div>
+      <div class="item">
+        <h4>電子情報通信学会 インターネットアーキテクチャ研究会 学生研究奨励賞</h4>
+        <div class="meta">情報指向ネットワークにおける TCP 輻輳回避アルゴリズムの有効性に関する検討 ／ 2022年9月</div>
+        <div class="authors">Han Nay Aung</div>
+      </div>
+
+      <div class="award-cat">Best Poster Award / ポスター優秀賞</div>
+      <div class="item">
+        <h4>電子情報通信学会 インターネットアーキテクチャ研究会</h4>
+        <div class="meta">ランダムウォークを用いた隠密通信の通信性能評価 ／ 2025年11月</div>
+        <div class="authors">椎名 智, Han Nay Aung, 大崎 博之</div>
+      </div>
+
+      <div class="award-cat">Kwansei Gakuin Univ. / 関西学院大学</div>
+      <div class="item">
+        <h4>関西学院大学 仁田記念賞</h4>
+        <div class="meta">2025年1月 ／ 採用人数: 各研究科から1名</div>
+        <div class="authors">Han Nay Aung</div>
+      </div>
+
+      <div class="award-cat">Other / その他</div>
+      <div class="item">
+        <h4>電子情報通信学会 学生会幹事 功労賞</h4>
+        <div class="meta">2024年3月</div>
+        <div class="authors">Han Nay Aung</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="eyebrow">Service</div>
+    <h2 class="section-title">活動</h2>
+    <p class="section-sub">研究以外の実績およびボランティア活動</p>
+    <div class="act-list">
+      <div class="act-item">
+        <div class="act-num">01</div>
+        <div>
+          <h4>関西学院大学 プレFDプログラム修了（2024年）</h4>
+          <p>将来の大学教員養成を目的としたプレFDプログラムに参加し全課程を修了。教育実践・授業設計・学生支援に関する基礎的素養を修得した。</p>
+        </div>
+      </div>
+      <div class="act-item">
+        <div class="act-num">02</div>
+        <div>
+          <h4>電子情報通信学会 関西支部 幹事学生（2022〜2024年）</h4>
+          <p>ボランティアとして幹事学生を務め、第27回学生会研究発表講演会(大阪大学)でセッション副座長、第28回(関西大学)でセッション座長を務めた。</p>
+        </div>
+      </div>
+      <div class="act-item">
+        <div class="act-num">03</div>
+        <div>
+          <h4>卒業式 在校生代表 送辞</h4>
+          <p>日本語教育センター在学中、上位の成績者として認められ、平成29年の卒業式で在校生代表として送辞を述べた。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Han Nay Aung. All rights reserved.</footer>
+</div>
+
+<script>
+/* =========================================================
+   Interactive network background (constellation effect)
+   - drifting nodes + edges between near nodes
+   - mouse / touch creates intersections to the cursor
+   ========================================================= */
+(function () {
+  const canvas = document.getElementById('network-bg');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0, nodes = [], raf = null;
+  const mouse = { x: null, y: null, active: false };
+
+  const CFG = {
+    density: 0.00009,   // nodes per px^2
+    minNodes: 36,
+    maxNodes: 150,
+    linkDist: 150,      // node-to-node link distance
+    mouseDist: 210,     // cursor link / influence radius
+    speed: 0.28,
+    node: '129,140,248',  // cursor fallback
+    edge: '148,163,184'   // (unused: edges blend the two node colors)
+  };
+
+  // ファンタジー(オーロラ)パレット — 各ノードにランダム割り当て
+  const PALETTE = [
+    [167,139,250], // violet
+    [192,132,252], // purple
+    [244,114,182], // pink
+    [236,72,153],  // magenta
+    [34,211,238],  // cyan
+    [45,212,191],  // teal
+    [96,165,250],  // blue
+    [129,140,248]  // indigo
+  ];
+  function pickColor(){ return PALETTE[(Math.random() * PALETTE.length) | 0]; }
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function build() {
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    const count = Math.max(CFG.minNodes,
+      Math.min(CFG.maxNodes, Math.floor(W * H * CFG.density)));
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: rand(-1, 1) * CFG.speed,
+        vy: rand(-1, 1) * CFG.speed,
+        r: rand(1.3, 2.7),
+        c: pickColor()
+      });
+    }
+  }
+
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+
+    // update positions
+    for (const n of nodes) {
+      if (!reduce) { n.x += n.vx; n.y += n.vy; }
+      if (mouse.active) {
+        const dx = mouse.x - n.x, dy = mouse.y - n.y;
+        const d = Math.hypot(dx, dy);
+        if (d < CFG.mouseDist && d > 0.01) {
+          const f = (1 - d / CFG.mouseDist) * 0.018;
+          n.vx += (dx / d) * f; n.vy += (dy / d) * f;
+        }
+      }
+      n.vx *= 0.992; n.vy *= 0.992;
+      // keep a minimum drift so it never freezes
+      const sp = Math.hypot(n.vx, n.vy);
+      if (sp < 0.05 && !reduce) {
+        n.vx += rand(-1, 1) * 0.02; n.vy += rand(-1, 1) * 0.02;
+      }
+      // wrap around edges
+      if (n.x < -30) n.x = W + 30; else if (n.x > W + 30) n.x = -30;
+      if (n.y < -30) n.y = H + 30; else if (n.y > H + 30) n.y = -30;
+    }
+
+    // node-to-node edges
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.hypot(dx, dy);
+        if (d < CFG.linkDist) {
+          const al = (1 - d / CFG.linkDist) * 0.55;
+          const er = (a.c[0] + b.c[0]) >> 1;
+          const eg = (a.c[1] + b.c[1]) >> 1;
+          const eb = (a.c[2] + b.c[2]) >> 1;
+          ctx.strokeStyle = 'rgba(' + er + ',' + eg + ',' + eb + ',' + al.toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // cursor intersections
+    if (mouse.active) {
+      for (const n of nodes) {
+        const dx = n.x - mouse.x, dy = n.y - mouse.y;
+        const d = Math.hypot(dx, dy);
+        if (d < CFG.mouseDist) {
+          const al = (1 - d / CFG.mouseDist) * 0.95;
+          ctx.strokeStyle = 'rgba(' + n.c[0] + ',' + n.c[1] + ',' + n.c[2] + ',' + al.toFixed(3) + ')';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y); ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // nodes
+    for (const n of nodes) {
+      let near = false;
+      if (mouse.active) {
+        near = Math.hypot(n.x - mouse.x, n.y - mouse.y) < CFG.mouseDist;
+      }
+      const col = n.c[0] + ',' + n.c[1] + ',' + n.c[2];
+      ctx.shadowBlur = near ? 16 : 8;
+      ctx.shadowColor = 'rgba(' + col + ',0.9)';
+      ctx.fillStyle = 'rgba(' + col + ',' + (near ? 1 : 0.85) + ')';
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, near ? n.r * 1.4 : n.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    raf = requestAnimationFrame(frame);
+  }
+
+  // events
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
+  }, { passive: true });
+  window.addEventListener('mouseout', () => { mouse.active = false; });
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches[0]) {
+      mouse.x = e.touches[0].clientX;
+      mouse.y = e.touches[0].clientY;
+      mouse.active = true;
+    }
+  }, { passive: true });
+  window.addEventListener('touchend', () => { mouse.active = false; });
+
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(build, 180);
+  });
+
+  build();
+  frame();
+})();
+
+/* mobile nav toggle */
+(function () {
+  const btn = document.querySelector('.menu-btn');
+  const links = document.getElementById('navlinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    })
+  );
+})();
+</script>
+</body>
+</html>
