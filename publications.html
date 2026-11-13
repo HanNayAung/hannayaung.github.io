@@ -1,1920 +1,616 @@
-<!doctype html>
-<html lang="ja" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>業績 (Publications) - Han Nay Aung</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { sans: ["Inter", "sans-serif"] },
-            colors: {
-              primary: "#1e3a8a",
-              secondary: "#475569",
-              // 目に優しいライトグレー系に変更
-              paper: { DEFAULT: "#f3f4f6", light: "#f9fafb", dark: "#e5e7eb" },
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .pub-link:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-paper text-gray-800 font-sans antialiased leading-relaxed flex flex-col min-h-screen"
-  >
-    <!-- ナビゲーションバー -->
-    <header
-      class="sticky top-0 bg-paper-light/95 backdrop-blur-sm border-b border-gray-200 z-50"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex-shrink-0">
-            <a href="index.html" class="text-xl font-bold text-gray-900"
-              >Han Nay Aung</a
-            >
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業績 (Publications) — Han Nay Aung</title>
+  <meta name="description" content="Han Nay Aung（ハンネーアウン）の業績一覧：論文誌、国際会議、国内発表。">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://www.hn-aung.org/publications.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="業績 (Publications) — Han Nay Aung">
+  <meta property="og:description" content="Han Nay Aung（ハンネーアウン）の業績一覧：論文誌、国際会議、国内発表。">
+  <meta property="og:url" content="https://www.hn-aung.org/publications.html">
+  <meta property="og:image" content="https://www.hn-aung.org/images/han-nay-aung.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body id="top" class="page-pubs">
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Han Nay Aung</a>
+      <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
+        <ul class="nav-list">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="publications.html" aria-current="page">業績</a></li>
+          <li><a href="awards.html">受賞・奨学金</a></li>
+          <li><a href="experience.html">経歴・活動</a></li>
+          <li><a href="projects.html">プログラム・メディア</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">メニュー</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow" lang="en">Publications</span>
+        <h1 class="section-title">業績</h1>
+        <p class="section-lead">引用数については
+          <a href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          をご覧ください。</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:2.5rem" aria-label="業績一覧">
+      <div class="container pubs-layout">
+        <aside class="pubs-side" aria-label="業績の絞り込みと年への移動">
+          <p class="side-label side-filters-label">Filter</p>
+          <div class="side-filters" role="group" aria-label="カテゴリで絞り込み">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true"><span>すべて <span lang="en">All</span></span> <span class="count">81</span></button>
+            <button class="chip" type="button" data-filter="journal" aria-pressed="false"><span>論文誌 <span lang="en">Journal</span></span> <span class="count">3</span></button>
+            <button class="chip" type="button" data-filter="intl" aria-pressed="false"><span>国際会議 <span lang="en">International</span></span> <span class="count">20</span></button>
+            <button class="chip" type="button" data-filter="national" aria-pressed="false"><span>国内発表 <span lang="en">National</span></span> <span class="count">58</span></button>
           </div>
-          <nav class="hidden md:flex space-x-6 lg:space-x-8">
-            <a
-              href="index.html#about"
-              class="text-gray-600 hover:text-primary font-medium transition-colors"
-              >ホーム</a
-            >
-            <a
-              href="index.html#news"
-              class="text-gray-600 hover:text-primary font-medium transition-colors"
-              >ニュース</a
-            >
-            <a
-              href="index.html#experience"
-              class="text-gray-600 hover:text-primary font-medium transition-colors"
-              >経歴</a
-            >
-            <a
-              href="index.html#awards"
-              class="text-gray-600 hover:text-primary font-medium transition-colors"
-              >受賞・奨学金</a
-            >
-            <a
-              href="index.html#activities"
-              class="text-gray-600 hover:text-primary font-medium transition-colors"
-              >活動</a
-            >
-            <a
-              href="#"
-              class="text-primary font-medium transition-colors border-b-2 border-primary"
-              >業績</a
-            >
-          </nav>
-          <div class="md:hidden flex items-center">
-            <button
-              id="mobile-menu-btn"
-              class="text-gray-600 hover:text-gray-900 focus:outline-none"
-            >
-              <i class="fas fa-bars text-2xl"></i>
-            </button>
-          </div>
+          <p class="side-label">Jump to year</p>
+          <ul class="side-years">
+            <li><p class="cat-name">論文誌（査読付き）</p><ul class="year-nav"><li><a href="#j-2026">2026</a></li> <li><a href="#j-2024">2024</a></li></ul></li>
+            <li><p class="cat-name">国際会議 — 主要シンポジウム（査読付き・フルペーパー）</p><ul class="year-nav"><li><a href="#im-2026">2026</a></li> <li><a href="#im-2025">2025</a></li> <li><a href="#im-2024">2024</a></li> <li><a href="#im-2023">2023</a></li></ul></li>
+            <li><p class="cat-name">国際会議 — その他（査読付き）</p><ul class="year-nav"><li><a href="#io-2023">2023</a></li> <li><a href="#io-2022">2022</a></li> <li><a href="#io-2021">2021</a></li></ul></li>
+            <li><p class="cat-name">国内発表（査読なし）</p><ul class="year-nav"><li><a href="#n-2026">2026</a></li> <li><a href="#n-2025">2025</a></li> <li><a href="#n-2024">2024</a></li> <li><a href="#n-2023">2023</a></li> <li><a href="#n-2022">2022</a></li> <li><a href="#n-2021">2021</a></li></ul></li>
+          </ul>
+        </aside>
+
+        <div class="pubs-numbered">
+          <!-- 番号 [1], [2], … は自動で振られます。新しい論文は該当する <ul class="pub-list"> に <li class="pub"> を追加してください。 -->
+
+          <span class="cat-skip" aria-hidden="true"></span>
+          <section class="pub-cat" data-cat="journal" aria-labelledby="cat-journal">
+            <div class="pub-cat-head">
+              <span class="eyebrow" lang="en">Journal (Peer-reviewed)</span>
+              <h2 class="pub-cat-title" id="cat-journal">論文誌（査読付き） <span class="badge">3件</span></h2>
+              <ul class="year-nav" aria-label="論文誌（査読付き）：年で移動">
+                <li><a href="#j-2026">2026</a></li>
+                <li><a href="#j-2024">2024</a></li>
+              </ul>
+            </div>
+            <h3 class="pub-year" id="j-2026">2026</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Hiroyuki Ohsaki.</p>
+                <p class="pub-title"><a href="https://doi.org/10.2197/ipsjjip.34.830" target="_blank" rel="noopener">Local Random Walks on Complex Graphs with Partial Non-Local Information</a></p>
+                <p class="pub-venue"><cite>Journal of Information Processing (IPSJ)</cite>, vol. 34, pp. 830-842, Sep. 2026.</p>
+                <div class="pub-badges"><a class="badge" href="https://doi.org/10.2197/ipsjjip.34.830" target="_blank" rel="noopener" aria-label="DOI: Local Random Walks on Complex Graphs with Partial Non-Local Information">DOI</a></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Hiroyuki Ohsaki.</p>
+                <p class="pub-title"><a href="https://doi.org/10.2197/ipsjjip.34.818" target="_blank" rel="noopener">Random Walks on Complex Networks Using Node Embedding Vectors</a></p>
+                <p class="pub-venue"><cite>Journal of Information Processing (IPSJ)</cite>, vol. 34, pp. 818-829, Sep. 2026.</p>
+                <div class="pub-badges"><a class="badge" href="https://doi.org/10.2197/ipsjjip.34.818" target="_blank" rel="noopener" aria-label="DOI: Random Walks on Complex Networks Using Node Embedding Vectors">DOI</a></div>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="j-2024">2024</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors">山崎康広, 江見太一, <strong class="me">ハンネーアウン</strong>, 大崎博之.</p>
+                <p class="pub-title">既知のハミング重みに基づいた AUTOSAR E2E の CRC 故障検出能力</p>
+                <p class="pub-venue"><cite>自動車技術会論文集</cite>, vol. 55, Jul. 2024.</p>
+              </li>
+            </ul>
+          </section>
+
+          <span class="cat-skip" aria-hidden="true"></span>
+          <section class="pub-cat" data-cat="intl" aria-labelledby="cat-international">
+            <div class="pub-cat-head">
+              <span class="eyebrow" lang="en">International Papers — Main Symposia (Peer-reviewed, Full Paper)</span>
+              <h2 class="pub-cat-title" id="cat-international">国際会議 — 主要シンポジウム（査読付き・フルペーパー） <span class="badge">14件</span></h2>
+              <ul class="year-nav" aria-label="国際会議 — 主要シンポジウム（査読付き・フルペーパー）：年で移動">
+                <li><a href="#im-2026">2026</a></li>
+                <li><a href="#im-2025">2025</a></li>
+                <li><a href="#im-2024">2024</a></li>
+                <li><a href="#im-2023">2023</a></li>
+              </ul>
+            </div>
+            <h3 class="pub-year" id="im-2026">2026</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taiki Nonaka, <strong class="me">Han Nay Aung</strong>, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Modeling and Analysis of 10BaseT1S Network with IEEE 802.1Qav Traffic Shaping</p>
+                <p class="pub-venue"><cite>Proceedings of the 2026 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 1231-1239, July. 2026.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taisei Isobe, <strong class="me">Han Nay Aung</strong>, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Data-Driven Optimization of IEEE 802.1Qcr Asynchronous Traffic Shaper Parameters for Automotive Networks</p>
+                <p class="pub-venue"><cite>Proceedings of the 2026 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 1223-1230, July. 2026.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Hidetaka Doen, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">On the Robustness of Bimodal Congestion Control against Inconsistent Explicit Feedback</p>
+                <p class="pub-venue"><cite>Proceedings of the 2026 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 1280-1287, July. 2026.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="im-2025">2025</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Sprint Walk: Local Random Walks with Partial Non-Local Information</p>
+                <p class="pub-venue"><cite>Proceedings of the 2025 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 222-231, July. 2025.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taiyo Hirayama, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Understanding and Mitigating Vulnerabilities of Random Walks against Adversarial Attacks</p>
+                <p class="pub-venue"><cite>Proceedings of the 2025 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 979-988, July. 2025.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taichi Emi, <strong class="me">Han Nay Aung</strong>, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Leveraging Machine Learning for CRC Diagnostic Coverage Estimation</p>
+                <p class="pub-venue"><cite>Proceedings of the 39th International Conference on Information Networking (ICOIN)</cite>, pp. 475-480, Jan. 2025.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Yuta Takesada, <strong class="me">Han Nay Aung</strong>, Ryo Nakamura, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Q-AIMD: AIMD-Based Window Flow Control with Reinforcement Learning</p>
+                <p class="pub-venue"><cite>Proceedings of the 39th International Conference on Information Networking (ICOIN)</cite>, pp. 179-184, Jan. 2025.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="im-2024">2024</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">On the Impact of Network Topology on Distributed Online Kernel Learning</p>
+                <p class="pub-venue"><cite>Proceedings of the 2024 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 421-428, July. 2024.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Node Embedding Accelerates Random Walk on a Graph</p>
+                <p class="pub-venue"><cite>Proceedings of the 2024 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 537-545, July. 2024.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Ren Inayoshi, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">BloomWalk and CuckooWalk: Fast Random Walks Utilizing Probabilistic Data Structure</p>
+                <p class="pub-venue"><cite>Proceedings of the 2024 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 342-349, July. 2024.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Hiroki Kawamura, Satoshi Shiina, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Robustness of Random Walk on a Graph against Adversary</p>
+                <p class="pub-venue"><cite>Proceedings of the 2024 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 1080-1088, July. 2024.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taichi Emi, <strong class="me">Han Nay Aung</strong>, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Improving CRC Fault Detection Probability in AUTOSAR E2E Based on Known Hamming Weights</p>
+                <p class="pub-venue"><cite>SAE Technical Paper</cite>, Jan. 2024.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="im-2023">2023</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">FL-PERF:Predicting TCP Throughput with Federated Learning</p>
+                <p class="pub-venue"><cite>Proceedings of 2023 IEEE Global Communications Conference (GLOBECOM)</cite>, pp. 4332-4337, Dec. 2023.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">On the Potential of Modern TCP Congestion Control Algorithms in Information Centric Networking</p>
+                <p class="pub-venue"><cite>Proceedings of 11th IEEE International Workshop on Architecture, Design, Deployment and Management of Networks and Applications (COMPSAC Main Conference Symposia)</cite>, pp. 1107-1112, June. 2023.</p>
+              </li>
+            </ul>
+          </section>
+
+          <span class="cat-skip" aria-hidden="true"></span>
+          <section class="pub-cat" data-cat="intl" aria-labelledby="cat-international-other">
+            <div class="pub-cat-head">
+              <span class="eyebrow" lang="en">International Papers — Other Conferences (Peer-reviewed)</span>
+              <h2 class="pub-cat-title" id="cat-international-other">国際会議 — その他（査読付き） <span class="badge">6件</span></h2>
+              <ul class="year-nav" aria-label="国際会議 — その他（査読付き）：年で移動">
+                <li><a href="#io-2023">2023</a></li>
+                <li><a href="#io-2022">2022</a></li>
+                <li><a href="#io-2021">2021</a></li>
+              </ul>
+            </div>
+            <h3 class="pub-year" id="io-2023">2023</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Keita Goto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Modeling MultiPath TCP for Control Parameter Tuning</p>
+                <p class="pub-venue"><cite>Proceedings of the 2023 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Student Research Symposium)</cite>, pp. 950-953, June. 2023.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Shota Inoue, <strong class="me">Han Nay Aung</strong>, Keita Goto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Study on Performance Bottleneck of FlowLevel Information-Centric Network Simulator</p>
+                <p class="pub-venue"><cite>Proceedings of the 2023 IEEE Signature Conference on Computers, Software, and Applications (COMPSAC Student Research Symposium)</cite>, pp. 26-30, June. 2023.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="io-2022">2022</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Keita Goto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Applicability of TCP Congestion Avoidance Algorithms to Information-Centric Networking</p>
+                <p class="pub-venue"><cite>Proceedings of the 2022 International Conference on Emerging Technologies for Communications (ICETC)</cite>, vol. 72, no. S7-7, p. 1, Nov. 2022.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taichi Emi, <strong class="me">Han Nay Aung</strong>, Yashiro Yamasaki, and Hiyoruki Ohsaki.</p>
+                <p class="pub-title">A Study on the Message Corruption Detectability in AUTOSAR E2E Profile 2</p>
+                <p class="pub-venue"><cite>Proceedings of the 2022 International Conference on Emerging Technologies for Communications (ICETC)</cite>, vol. 72, no. S5-1, p. 1, Nov. 2022.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Kouki Takamori, Taichi Emi, <strong class="me">Han Nay Aung</strong>, Keita Goto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Impact of Network Topology on the Efficiency of Distributed Online Kernel Learning</p>
+                <p class="pub-venue"><cite>Proceedings of the 2022 International Conference on Emerging Technologies for Communications (ICETC)</cite>, vol. 72, no. S5-7, p. 1, Nov. 2022.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="io-2021">2021</h3>
+            <ul class="pub-list">
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Soma Yamamoto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Applicability of TCP CUBIC Congestion Avoidance Algorithm for Information-Centric Networking</p>
+                <p class="pub-venue"><cite>Proceedings of the 2021 International Conference on Emerging Technologies for Communications (ICETC)</cite>, vol. 68, no. P3-13, Dec. 2021.</p>
+              </li>
+            </ul>
+          </section>
+
+          <span class="cat-skip" aria-hidden="true"></span>
+          <section class="pub-cat" data-cat="national" aria-labelledby="cat-national">
+            <div class="pub-cat-head">
+              <span class="eyebrow" lang="en">National Papers (No peer review)</span>
+              <h2 class="pub-cat-title" id="cat-national">国内発表（査読なし） <span class="badge">58件</span></h2>
+              <p class="pub-cat-note">［Poster］と付記したもの以外はすべて口頭発表です。</p>
+              <ul class="year-nav" aria-label="国内発表（査読なし）：年で移動">
+                <li><a href="#n-2026">2026</a></li>
+                <li><a href="#n-2025">2025</a></li>
+                <li><a href="#n-2024">2024</a></li>
+                <li><a href="#n-2023">2023</a></li>
+                <li><a href="#n-2022">2022</a></li>
+                <li><a href="#n-2021">2021</a></li>
+              </ul>
+            </div>
+            <h3 class="pub-year" id="n-2026">2026</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">フローごとの輻輳制御アルゴリズム選択によるネットワーク全体最適化に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-24)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">磯部 泰成, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">車載 TSN における ATS バースト長再調整によるサービス余裕最大化に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-04)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">野中 泰喜, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">10Base-T1S PLCA ネットワークにおけるクレジット凍結型 CBS 方策の遅延解析に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-03)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">伝田 和馬, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">低次数ノード集約がランダムウォーク到着時間に与える影響に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-16)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">平山 太陽, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">有限ホライズン吸収時間に基づくランダムウォーク探索遅延のリンク張り替え攻撃に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-14)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">道圓 英隆, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">シグモイド重みによる輻輳状態識別を用いたルータ支援型輻輳制御に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-20)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">山崎 光晴, 平山 太陽, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">部分経路観測に基づく潜在 QoS 座標埋め込み手法に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-28)</cite>, Sep. 2026.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Than Thar Khun Sint, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on Multipath Rate Control Using Shared Delay Signals</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-21)</cite>, Sep. 2026.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="n-2025">2025</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">断片的な非局所情報を利用するグラフ上のランダムウォークの有効性の検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会 (シン ITRC)</cite>, Sep. 2025.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">野中 泰喜, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">IEEE802.1Qav CBS を用いる 10BaseT1S ネットワークの最悪遅延に関する検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会 (シン ITRC)</cite>, Sep. 2025.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Ren Inayoshi, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on Random Walks on Graphs Using Sliding Bloom Filters</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Nov. 2025.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Satoshi Shiina, <strong class="me">Han Nay Aung</strong>, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Evaluation of Communication Performance of Covert Communication Using Random Walks</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Nov. 2025.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">断片的な非局所情報を利用するグラフ上のランダムウォークの有効性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-16)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">磯部 泰成, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">機械学習を用いた車載ネットワークにおける IEEE 802.1Qcr ATS 制御パラメータ最適化手法の一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-02)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">野中 泰喜, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">IEEE 802.1Qav CBS を用いる 10Base-T1S ネットワークの最悪遅延に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-01)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">平山 太陽, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">強化学習を用いたランダムウォークに対する敵対的攻撃手法の一提案</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-15)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">伝田 和馬, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">直進性およびランダム性を有するグラフ上の移動エージェントの平均初回到着時間の解析</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-17)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">道圓 英隆, 武貞 悠太, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">TCP 受信者によるボトルネックルータの輻輳状態推定手法の一提案</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-27)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">香川 光琉, 平山 太陽, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">埋め込み隠れマルコフモデルによるボトルネック帯域推定手法の一提案</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-21)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">山崎 光晴, 稲吉 蓮, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">フローが経由するリンク情報に基づく QoS 推定手法の一提案</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-20)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">クーンセンタンター, 椎名 智, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">サブ RTT 輻輳制御 Bolt の制御パラメータが通信特性に与える影響に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-05)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">武貞 悠太, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">TCP 通信履歴にもとづく利用者の QoS 選好推測の有効性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-25)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">稲吉 蓮, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">動ブルームフィルタを用いるグラフ上のランダムウォークに関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-13)</cite>, Sep. 2025.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">椎名 智, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">ランダムウォークを用いた隠密通信の有効性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会 講演論文集 (B-16-14)</cite>, Sep. 2025.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="n-2024">2024</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors">伝田 和馬, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">断片的な非局所情報を利用するグラフ上のランダムウォークに関する検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会 (シン ITRC)</cite>, Nov. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">磯部 泰成, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">車載ネットワークにおける IEEE 802.1Qcr ATS の特性に関する検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会 (シン ITRC)</cite>, Nov. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Study of Random Walk on a Graph utilizing Embedding Vectors in Partial Nodes</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Oct. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">部分的なノードの埋め込みベクトルを利用したランダムウォークに関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-13)</cite>, p.311, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">武貞 悠太, <strong class="me">ハンネーアウン</strong>, 中村 遼, 大崎 博之.</p>
+                <p class="pub-title">強化学習に基づくフロー制御方式のウィンドウサイズ調整法に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-02)</cite>, p.298, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">椎名 智, 河村 宇記, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">敵対的攻撃の環境下におけるランダムウォークの平均初回到着時間の解析</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-10)</cite>, p.308, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">稲吉 蓮, 吉次 亮, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">確率的データ構造を用いたランダムウォークのフィルタ占有率調整機構に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-12)</cite>, p.310, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">平山 太陽, 河村 宇記, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">敵対的攻撃に対するグラフ上のランダムウォークの堅牢性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会 講演論文集(B-16-14)</cite>, p.312, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">磯部 泰成, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">車載ネットワークにおける IEEE 802.1Qcr ATS の特性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-18)</cite>, p.363, Sep. 2024.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">伝田 和馬, <strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">断片的な非局所情報を利用するグラフ上のランダムウォーに関する一検討析</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-22)</cite>, p.359, Sep. 2024.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Hiroyuki Ohsaki.</p>
+                <p class="pub-title">Study on the Effectiveness of Building TCP Throughput Prediction Model using Federated Learning</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Jan. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Taichi Emi, <strong class="me">Han Nay Aung</strong>, Yasuhiro Yamasaki, Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on Estimating Hamming Weight of CRC with Machine Learning</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Jan. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Yuta Takesada, <strong class="me">Han Nay Aung</strong>, Ryo Nakamura, Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on Reinforcement Learning-Based Window Flow Control with Heterogeneous Utility Function</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Jan. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors">Satoshi Shiina, Hiroki Kawamura, <strong class="me">Han Nay Aung</strong>, Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Robustness of Random Walks against Adversary Attacks</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Jan. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong> and H. Ohsaki.</p>
+                <p class="pub-title">Study on the Effectiveness of Building TCP Throughput Prediction Model using Federated Learning</p>
+                <p class="pub-venue"><cite>Workshop on Internet Architecture and Applications (IA)</cite>, Jan. 2024.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="n-2023">2023</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors">椎名 智, 河村 宇記, <strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">敵対的な攻撃に対するランダムウォークのロバスト性に関する検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会(シン ITRC)</cite>, Nov. 2023.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">稲吉 蓮, 吉次 亮, <strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">ブルームフィルタを用いたグラフ上のランダムウォークの提案</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会(シンITRC)</cite>, Nov. 2023.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">武貞 悠太, <strong class="me">Han Nay Aung</strong>, 中村 遼, 大崎 博 之.</p>
+                <p class="pub-title">異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する検討</p>
+                <p class="pub-venue"><cite>産学協力研究コンソーシアムインターネット技術研究会(シン ITRC)</cite>, Nov. 2023.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">山崎 康広, 江見 太一, <strong class="me">ハン ネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">既知のハミ ング重みに基づいた AUTOSAR E2E の CRC 故障検出能力</p>
+                <p class="pub-venue"><cite>Society of Automotive Engineers of Japan (JSAE 2023) 秋季大会学術講演会</cite>, Oct. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">連合学習を用いた TCP スループット予測モデル構築手法の有効性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-22)</cite>, p.279, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">椎名 智, 河村 宇記, <strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">敵対的な攻撃に対するランダムウォークのロバスト性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-10)</cite>, p.267, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">稲吉 蓮, 吉次 亮, <strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">ブルームフィルタを用いたグラフ上のランダムウォークの一提案</p>
+                <p class="pub-venue"><cite>電子情報 通信学会 ソサイエティ大会 講演論文集 (B-16-13)</cite>, p. 270, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">岡野 康太朗, 中川 大輝, <strong class="me">Han Nay Aung</strong>, 大崎 博之.</p>
+                <p class="pub-title">ノードの埋め込みベクトルを利用したグラフ上のランダムウォークに関する提案</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会 講演論文集 (B-16-14)</cite>, p.271, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">武貞 悠太, <strong class="me">Han Nay Aung</strong>, 中村 遼, 大崎 博之.</p>
+                <p class="pub-title">異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-24)</cite>, p.281, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">江見 太一, <strong class="me">ハンネー アウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">機械学習による CRC のハミング重み推定手法に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報 通信学 会ソサイエティ大会 講演論文集 (B-16-32)</cite>, p. 289, Sep. 2023.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 大崎 博之.</p>
+                <p class="pub-title">連合学習を用いた TCP スループット予測モデル構築手法の有効性に関する検討</p>
+                <p class="pub-venue"><cite>第 4 回 コミュニケーションクオリティ研究会（CQ）</cite>, Aug. 2023.</p>
+                <div class="pub-badges"><span class="badge badge--muted">Poster</span></div>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="n-2022">2022</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 後藤 啓大, 大崎 博之.</p>
+                <p class="pub-title">連合学習を用いた TCP スループット予測モデル構築手法に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会 講演論文集 (B-16-7)</cite>, Sep. 2022.</p>
+              </li>
+              <li class="pub" lang="en">
+                <p class="pub-authors"><strong class="me">Han Nay Aung</strong>, Keita Goto, and Hiroyuki Ohsaki.</p>
+                <p class="pub-title">A Study on the Applicability of TCP Congestion Avoidance Algorithms to Information-Centric Networking</p>
+                <p class="pub-venue"><cite>電子情報通信学会技術研究報告 (IA2022-21)</cite>, vol.122, pp.36-42, Sep. 2022.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">江見 太一, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">AUTOSAR E2E Profile 2 におけるメッセージ破壊検出能力に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-26)</cite>, Sep. 2022.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">江見 太一, <strong class="me">ハンネーアウン</strong>, 山崎 康広, 大崎 博之.</p>
+                <p class="pub-title">コントローラエリアネットワーク向け E2E プロファイルを対象とした AUTOSAR エンド間通信におけるメッセージ破壊検出能力の計測</p>
+                <p class="pub-venue"><cite>電子情報通信学会技術研究報告 (IA2022-65)</cite>, vol.122, pp.86-90, Dec. 2022.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">高森 洸希, 江見 太一, <strong class="me">ハンネーアウン</strong>, 後藤 啓大, 大崎 博之.</p>
+                <p class="pub-title">ネットワークトポロジが分散型オンラインカーネル学習の効率性に与える影響に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会講演論文集 (B-16-13)</cite>, Sep. 2022.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors">高森 洸希, 江見 太一, <strong class="me">ハンネーアウン</strong>, 後藤 啓大, 大崎 博之.</p>
+                <p class="pub-title">ネットワークトポロジが分散型オンラインカーネル学習の効率性に与える影響</p>
+                <p class="pub-venue"><cite>電子情報通信学会技術研究報告(IA2022-58)</cite>, vol.122, pp. 56-59, Dec. 2022.</p>
+              </li>
+            </ul>
+            <h3 class="pub-year" id="n-2021">2021</h3>
+            <ul class="pub-list">
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 山本 創麻, 大崎 博之.</p>
+                <p class="pub-title">情報指向ネットワークにおける TCP CUBIC 輻輳回避アルゴリズムの適用性に関する検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会技術研究報告 (IA2021-36)</cite>, pp. 31-33, Dec. 2021.</p>
+              </li>
+              <li class="pub">
+                <p class="pub-authors"><strong class="me">ハンネーアウン</strong>, 山本 創麻, 大崎 博之.</p>
+                <p class="pub-title">情報指向ネットワークにおける TCP CUBIC 輻輳回避アルゴリズムの適用性に関する一検討</p>
+                <p class="pub-venue"><cite>電子情報通信学会ソサイエティ大会 講演論文集 (B-16-9)</cite>, Sep. 2021.</p>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-paper-light border-t border-gray-100"
-      >
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="index.html#about"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md"
-            >ホーム</a
-          >
-          <a
-            href="index.html#news"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md"
-            >ニュース</a
-          >
-          <a
-            href="index.html#experience"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md"
-            >経歴</a
-          >
-          <a
-            href="index.html#awards"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md"
-            >受賞・奨学金</a
-          >
-          <a
-            href="index.html#activities"
-            class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-paper rounded-md"
-            >活動</a
-          >
-          <a
-            href="#"
-            class="block px-3 py-2 text-base font-medium text-primary bg-paper-dark rounded-md"
-            >業績</a
-          >
-        </div>
-      </div>
-    </header>
+    </section>
+  </main>
 
-    <main class="flex-grow pt-12 pb-16">
-      <section id="publications">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-primary pb-2 inline-block"
-          >
-            業績 (Publications)
-          </h2>
-          <p class="mb-10 text-gray-600">
-            引用数については
-            <a
-              href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&hl=en"
-              target="_blank"
-              class="text-primary hover:underline font-medium"
-              >Google Scholar</a
-            >
-            をご覧ください。
-          </p>
-
-          <div class="flex flex-wrap gap-3 mb-10">
-            <details class="group relative">
-              <summary class="list-none cursor-pointer px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors select-none">
-                Journal ▾
-              </summary>
-              <div class="absolute z-10 mt-2 flex flex-wrap gap-2 bg-paper-light border border-gray-200 rounded-lg shadow-md p-3 w-max">
-                <a href="#j-2026" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2026</a>
-                <a href="#j-2024" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2024</a>
-              </div>
-            </details>
-
-            <details class="group relative">
-              <summary class="list-none cursor-pointer px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors select-none">
-                International Papers — Main Symposia ▾
-              </summary>
-              <div class="absolute z-10 mt-2 flex flex-wrap gap-2 bg-paper-light border border-gray-200 rounded-lg shadow-md p-3 w-max">
-                <a href="#im-2026" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2026</a>
-                <a href="#im-2025" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2025</a>
-                <a href="#im-2024" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2024</a>
-                <a href="#im-2023" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2023</a>
-              </div>
-            </details>
-
-            <details class="group relative">
-              <summary class="list-none cursor-pointer px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors select-none">
-                International Papers — Other Conferences ▾
-              </summary>
-              <div class="absolute z-10 mt-2 flex flex-wrap gap-2 bg-paper-light border border-gray-200 rounded-lg shadow-md p-3 w-max">
-                <a href="#io-2023" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2023</a>
-                <a href="#io-2022" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2022</a>
-                <a href="#io-2021" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2021</a>
-              </div>
-            </details>
-
-            <details class="group relative">
-              <summary class="list-none cursor-pointer px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold hover:bg-primary hover:text-white transition-colors select-none">
-                National Papers ▾
-              </summary>
-              <div class="absolute z-10 mt-2 flex flex-wrap gap-2 bg-paper-light border border-gray-200 rounded-lg shadow-md p-3 w-max">
-                <a href="#n-2026" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2026</a>
-                <a href="#n-2025" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2025</a>
-                <a href="#n-2024" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2024</a>
-                <a href="#n-2023" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2023</a>
-                <a href="#n-2022" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2022</a>
-                <a href="#n-2021" class="px-3 py-1 rounded-full bg-paper-dark text-gray-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors">2021</a>
-              </div>
-            </details>
-          </div>
-
-          <style>
-            details[open] summary { background-color: #1e3a8a; color: #fff; }
-            details summary::-webkit-details-marker { display: none; }
-          </style>
-
-          <!-- Journal -->
-          <div class="mb-14">
-            <h3
-              class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2"
-              id="cat-journal"
-            >
-              Journal (Peer-reviewed)
-            </h3>
-            <h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="j-2026">2026</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-9">
-                    [1]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Hiroyuki Ohsaki.<br /><a href="https://doi.org/10.2197/ipsjjip.34.830" target="_blank" class="pub-link"><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Local Random Walks on Complex Graphs with Partial
-                      Non-Local Information</span
-                    ></a><span class="italic text-gray-700"
-                      >Journal of Information Processing (IPSJ)</span
-                  >, vol. 34, pp. 830-842, Sep. 2026.
-                  </div>
-</div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-9">
-                    [2]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Hiroyuki Ohsaki.<br /><a href="https://doi.org/10.2197/ipsjjip.34.818" target="_blank" class="pub-link"><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Random Walks on Complex Networks Using Node Embedding
-                      Vectors</span
-                    ></a><span class="italic text-gray-700"
-                      >Journal of Information Processing (IPSJ)</span
-                  >, vol. 34, pp. 818-829, Sep. 2026.
-                  </div>
-</div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="j-2024">2024</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-9">
-                    [3]
-                  </div>
-                  <div>
-                    山崎康広, 江見太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >既知のハミング重みに基づいた AUTOSAR E2E の CRC
-                      故障検出能力</span
-                    ><span class="italic text-gray-700">自動車技術会論文集</span
-                    >, vol. 55, Jul. 2024.
-                  </div>
-                </div>
-</li>
-</ul>
-          </div>
-
-          <!-- International Papers -->
-          <div class="mb-14">
-            <h3
-              class="text-2xl font-bold text-gray-800 mb-2 border-b border-gray-200 pb-2"
-              id="cat-international"
-            >
-              International Papers &mdash; Main Symposia (Peer-reviewed, Full Paper)
-            </h3>
-            <h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="im-2026">2026</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [4]
-                  </div>
-                  <div>
-                    Taiki Nonaka,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Modeling and Analysis of 10BaseT1S Network with IEEE
-                      802.1Qav Traffic Shaping</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2026 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 1231-1239, July. 2026.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [5]
-                  </div>
-                  <div>
-                    Taisei Isobe,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Data-Driven Optimization of IEEE 802.1Qcr Asynchronous
-                      Traffic Shaper Parameters for Automotive Networks</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2026 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 1223-1230, July. 2026.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [6]
-                  </div>
-                  <div>
-                    Hidetaka Doen,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >On the Robustness of Bimodal Congestion Control against
-                      Inconsistent Explicit Feedback</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2026 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 1280-1287, July. 2026.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="im-2025">2025</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [7]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Sprint Walk: Local Random Walks with Partial Non-Local
-                      Information</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2025 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 222-231, July. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [8]
-                  </div>
-                  <div>
-                    Taiyo Hirayama,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Understanding and Mitigating Vulnerabilities of Random
-                      Walks against Adversarial Attacks</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2025 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 979-988, July. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [9]
-                  </div>
-                  <div>
-                    Taichi Emi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Leveraging Machine Learning for CRC Diagnostic Coverage
-                      Estimation</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 39th International Conference on
-                      Information Networking (ICOIN)</span
-                    >, pp. 475-480, Jan. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [10]
-                  </div>
-                  <div>
-                    Yuta Takesada,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Ryo Nakamura, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Q-AIMD: AIMD-Based Window Flow Control with Reinforcement
-                      Learning</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 39th International Conference on
-                      Information Networking (ICOIN)</span
-                    >, pp. 179-184, Jan. 2025.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="im-2024">2024</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [11]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >On the Impact of Network Topology on Distributed Online
-                      Kernel Learning</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2024 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 421-428, July. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [12]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Node Embedding Accelerates Random Walk on a Graph</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2024 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 537-545, July. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [13]
-                  </div>
-                  <div>
-                    Ren Inayoshi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >BloomWalk and CuckooWalk: Fast Random Walks Utilizing
-                      Probabilistic Data Structure</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2024 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 342-349, July. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [14]
-                  </div>
-                  <div>
-                    Hiroki Kawamura, Satoshi Shiina,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Robustness of Random Walk on a Graph against
-                      Adversary</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2024 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Main
-                      Conference Symposia)</span
-                    >, pp. 1080-1088, July. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [15]
-                  </div>
-                  <div>
-                    Taichi Emi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yasuhiro Yamasaki, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Improving CRC Fault Detection Probability in AUTOSAR E2E
-                      Based on Known Hamming Weights</span
-                    ><span class="italic text-gray-700"
-                      >SAE Technical Paper</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="im-2023">2023</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [16]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >FL-PERF:Predicting TCP Throughput with Federated
-                      Learning</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of 2023 IEEE Global Communications Conference
-                      (GLOBECOM)</span
-                    >, pp. 4332-4337, Dec. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [17]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >On the Potential of Modern TCP Congestion Control
-                      Algorithms in Information Centric Networking</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of 11th IEEE International Workshop on
-                      Architecture, Design, Deployment and Management of
-                      Networks and Applications (COMPSAC Main Conference
-                      Symposia)</span
-                    >, pp. 1107-1112, June. 2023.
-                  </div>
-                </div>
-</li>
-</ul>
-          </div>
-
-          <div class="mb-14">
-            <h3
-              class="text-2xl font-bold text-gray-800 mb-2 border-b border-gray-200 pb-2"
-            >
-              International Papers &mdash; Other Conferences (Peer-reviewed)
-            </h3>
-            <h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="io-2023">2023</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [18]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Keita Goto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Modeling MultiPath TCP for Control Parameter Tuning</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2023 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Student
-                      Research Symposium)</span
-                    >, pp. 950-953, June. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [19]
-                  </div>
-                  <div>
-                    Shota Inoue,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Keita Goto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Study on Performance Bottleneck of FlowLevel
-                      Information-Centric Network Simulator</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2023 IEEE Signature Conference on
-                      Computers, Software, and Applications (COMPSAC Student
-                      Research Symposium)</span
-                    >, pp. 26-30, June. 2023.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="io-2022">2022</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [20]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Keita Goto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Applicability of TCP Congestion Avoidance
-                      Algorithms to Information-Centric Networking</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2022 International Conference on
-                      Emerging Technologies for Communications (ICETC)</span
-                    >, vol. 72, no. S7-7, p. 1, Nov. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [21]
-                  </div>
-                  <div>
-                    Taichi Emi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yashiro Yamasaki, and Hiyoruki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Message Corruption Detectability in
-                      AUTOSAR E2E Profile 2</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2022 International Conference on
-                      Emerging Technologies for Communications (ICETC)</span
-                    >, vol. 72, no. S5-1, p. 1, Nov. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [22]
-                  </div>
-                  <div>
-                    Kouki Takamori, Taichi Emi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Keita Goto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Impact of Network Topology on the
-                      Efficiency of Distributed Online Kernel Learning</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2022 International Conference on
-                      Emerging Technologies for Communications (ICETC)</span
-                    >, vol. 72, no. S5-7, p. 1, Nov. 2022.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="io-2021">2021</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [23]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Soma Yamamoto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Applicability of TCP CUBIC Congestion
-                      Avoidance Algorithm for Information-Centric
-                      Networking</span
-                    ><span class="italic text-gray-700"
-                      >Proceedings of the 2021 International Conference on
-                      Emerging Technologies for Communications (ICETC)</span
-                    >, vol. 68, no. P3-13, Dec. 2021.
-                  </div>
-                </div>
-</li>
-</ul>
-          </div>
-
-          <!-- National Papers -->
-          <div>
-            <h3
-              class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2"
-              id="cat-national"
-            >
-              National Papers (No peer review)
-            </h3>
-            <p class="text-sm text-gray-500 mb-4">［Poster］と付記したもの以外はすべて口頭発表です。</p>
-            <h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2026">2026</h4>
-<ul class="divide-y divide-gray-200">
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[24]</div>
-<div>
-<span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">フローごとの輻輳制御アルゴリズム選択によるネットワーク全体最適化に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-24)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[25]</div>
-<div>
-磯部 泰成, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 山崎 康広, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">車載 TSN における ATS バースト長再調整によるサービス余裕最大化に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-04)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[26]</div>
-<div>
-野中 泰喜, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 山崎 康広, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">10Base-T1S PLCA ネットワークにおけるクレジット凍結型 CBS 方策の遅延解析に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-03)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[27]</div>
-<div>
-伝田 和馬, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">低次数ノード集約がランダムウォーク到着時間に与える影響に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-16)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[28]</div>
-<div>
-平山 太陽, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">有限ホライズン吸収時間に基づくランダムウォーク探索遅延のリンク張り替え攻撃に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-14)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[29]</div>
-<div>
-道圓 英隆, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">シグモイド重みによる輻輳状態識別を用いたルータ支援型輻輳制御に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-20)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[30]</div>
-<div>
-山崎 光晴, 平山 太陽, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">ハンネーアウン</span>, 大崎 博之.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">部分経路観測に基づく潜在 QoS 座標埋め込み手法に関する一検討</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-28)</span>, Sep. 2026.
-</div></div></li>
-
-<li class="py-4"><div class="flex gap-4">
-<div class="flex-shrink-0 font-medium text-gray-500 w-10">[31]</div>
-<div>
-Than Thar Khun Sint, <span class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2">Han Nay Aung</span>, and Hiroyuki Ohsaki.<br />
-<span class="font-bold text-gray-900 text-lg leading-snug block my-1">A Study on Multipath Rate Control Using Shared Delay Signals</span>
-<span class="italic text-gray-700">電子情報通信学会ソサイエティ大会講演論文集 (B-16-21)</span>, Sep. 2026.
-</div></div></li>
-
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2025">2025</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [32]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    ><span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >断片的な非局所情報を利用するグラフ上のランダムウォークの有効性の検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会 (シン
-                      ITRC)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [33]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >野中 泰喜,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >IEEE802.1Qav CBS を用いる 10BaseT1S
-                      ネットワークの最悪遅延に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会 (シン
-                      ITRC)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [34]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >Ren Inayoshi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on Random Walks on Graphs Using Sliding Bloom
-                      Filters</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Nov. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [35]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >Satoshi Shiina,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Evaluation of Communication Performance of
-                      Covert Communication Using Random Walks</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Nov. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [36]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >断片的な非局所情報を利用するグラフ上のランダムウォークの有効性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-16)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [37]
-                  </div>
-                  <div>
-                    磯部 泰成,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >機械学習を用いた車載ネットワークにおける IEEE 802.1Qcr
-                      ATS 制御パラメータ最適化手法の一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-02)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [38]
-                  </div>
-                  <div>
-                    野中 泰喜,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >IEEE 802.1Qav CBS を用いる 10Base-T1S
-                      ネットワークの最悪遅延に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-01)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [39]
-                  </div>
-                  <div>
-                    平山 太陽,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >強化学習を用いたランダムウォークに対する敵対的攻撃手法の一提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-15)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [40]
-                  </div>
-                  <div>
-                    伝田 和馬,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >直進性およびランダム性を有するグラフ上の移動エージェントの平均初回到着時間の解析</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-17)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [41]
-                  </div>
-                  <div>
-                    道圓 英隆, 武貞 悠太,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >TCP
-                      受信者によるボトルネックルータの輻輳状態推定手法の一提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-27)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [42]
-                  </div>
-                  <div>
-                    香川 光琉, 平山 太陽,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >埋め込み隠れマルコフモデルによるボトルネック帯域推定手法の一提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-21)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [43]
-                  </div>
-                  <div>
-                    山崎 光晴, 稲吉 蓮,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >フローが経由するリンク情報に基づく QoS
-                      推定手法の一提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-20)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [44]
-                  </div>
-                  <div>
-                    クーンセンタンター, 椎名 智,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >サブ RTT 輻輳制御 Bolt
-                      の制御パラメータが通信特性に与える影響に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-05)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [45]
-                  </div>
-                  <div>
-                    武貞 悠太,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >TCP 通信履歴にもとづく利用者の QoS
-                      選好推測の有効性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-25)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [46]
-                  </div>
-                  <div>
-                    稲吉 蓮,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >動ブルームフィルタを用いるグラフ上のランダムウォークに関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-13)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [47]
-                  </div>
-                  <div>
-                    椎名 智,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ランダムウォークを用いた隠密通信の有効性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会 講演論文集
-                      (B-16-14)</span
-                    >, Sep. 2025.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2024">2024</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [48]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >伝田 和馬,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >断片的な非局所情報を利用するグラフ上のランダムウォークに関する検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会 (シン
-                      ITRC)</span
-                    >, Nov. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [49]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >磯部 泰成,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >車載ネットワークにおける IEEE 802.1Qcr ATS
-                      の特性に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会 (シン
-                      ITRC)</span
-                    >, Nov. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [50]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    ><span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Study of Random Walk on a Graph utilizing Embedding
-                      Vectors in Partial Nodes</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Oct. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [51]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >部分的なノードの埋め込みベクトルを利用したランダムウォークに関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-13)</span
-                    >, p.311, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [52]
-                  </div>
-                  <div>
-                    武貞 悠太,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 中村 遼, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >強化学習に基づくフロー制御方式のウィンドウサイズ調整法に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-02)</span
-                    >, p.298, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [53]
-                  </div>
-                  <div>
-                    椎名 智, 河村 宇記,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >敵対的攻撃の環境下におけるランダムウォークの平均初回到着時間の解析</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-10)</span
-                    >, p.308, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [54]
-                  </div>
-                  <div>
-                    稲吉 蓮, 吉次 亮,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >確率的データ構造を用いたランダムウォークのフィルタ占有率調整機構に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-12)</span
-                    >, p.310, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [55]
-                  </div>
-                  <div>
-                    平山 太陽, 河村 宇記,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >敵対的攻撃に対するグラフ上のランダムウォークの堅牢性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会
-                      講演論文集(B-16-14)</span
-                    >, p.312, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [56]
-                  </div>
-                  <div>
-                    磯部 泰成,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >車載ネットワークにおける IEEE 802.1Qcr ATS
-                      の特性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-18)</span
-                    >, p.363, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [57]
-                  </div>
-                  <div>
-                    伝田 和馬,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >断片的な非局所情報を利用するグラフ上のランダムウォーに関する一検討析</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-22)</span
-                    >, p.359, Sep. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [58]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    ><span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Study on the Effectiveness of Building TCP Throughput
-                      Prediction Model using Federated Learning</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [59]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >Taichi Emi,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Yasuhiro Yamasaki, Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on Estimating Hamming Weight of CRC with Machine
-                      Learning</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [60]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >Yuta Takesada,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Ryo Nakamura, Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on Reinforcement Learning-Based Window Flow
-                      Control with Heterogeneous Utility Function</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [61]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >Satoshi Shiina, Hiroki Kawamura,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Robustness of Random Walks against
-                      Adversary Attacks</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [62]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    ><span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >
-                    and H. Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >Study on the Effectiveness of Building TCP Throughput
-                      Prediction Model using Federated Learning</span
-                    ><span class="italic text-gray-700"
-                      >Workshop on Internet Architecture and Applications
-                      (IA)</span
-                    >, Jan. 2024.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2023">2023</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [63]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >椎名 智, 河村 宇記,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >敵対的な攻撃に対するランダムウォークのロバスト性に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会(シン
-                      ITRC)</span
-                    >, Nov. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [64]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >稲吉 蓮, 吉次 亮,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ブルームフィルタを用いたグラフ上のランダムウォークの提案</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会(シンITRC)</span
-                    >, Nov. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [65]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    >武貞 悠太,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 中村 遼, 大崎 博 之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >産学協力研究コンソーシアムインターネット技術研究会(シン
-                      ITRC)</span
-                    >, Nov. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [66]
-                  </div>
-                  <div>
-                    山崎 康広, 江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハン ネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >既知のハミ ング重みに基づいた AUTOSAR E2E の CRC
-                      故障検出能力</span
-                    ><span class="italic text-gray-700"
-                      >Society of Automotive Engineers of Japan (JSAE 2023)
-                      秋季大会学術講演会</span
-                    >, Oct. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [67]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >連合学習を用いた TCP
-                      スループット予測モデル構築手法の有効性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-22)</span
-                    >, p.279, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [68]
-                  </div>
-                  <div>
-                    椎名 智, 河村 宇記,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >敵対的な攻撃に対するランダムウォークのロバスト性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-10)</span
-                    >, p.267, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [69]
-                  </div>
-                  <div>
-                    稲吉 蓮, 吉次 亮,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ブルームフィルタを用いたグラフ上のランダムウォークの一提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報 通信学会 ソサイエティ大会 講演論文集
-                      (B-16-13)</span
-                    >, p. 270, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [70]
-                  </div>
-                  <div>
-                    岡野 康太朗, 中川 大輝,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ノードの埋め込みベクトルを利用したグラフ上のランダムウォークに関する提案</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会 講演論文集
-                      (B-16-14)</span
-                    >, p.271, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [71]
-                  </div>
-                  <div>
-                    武貞 悠太,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, 中村 遼, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >異種の効用関数に対応した強化学習型ウィンドウフロー制御方式に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-24)</span
-                    >, p.281, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [72]
-                  </div>
-                  <div>
-                    江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネー アウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >機械学習による CRC
-                      のハミング重み推定手法に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報 通信学 会ソサイエティ大会 講演論文集
-                      (B-16-32)</span
-                    >, p. 289, Sep. 2023.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [73]
-                  </div>
-                  <div>
-                    <span
-                      class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded mr-2 align-middle"
-                      >Poster</span
-                    ><span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >連合学習を用いた TCP
-                      スループット予測モデル構築手法の有効性に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >第 4 回 コミュニケーションクオリティ研究会（CQ）</span
-                    >, Aug. 2023.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2022">2022</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [74]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 後藤 啓大, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >連合学習を用いた TCP
-                      スループット予測モデル構築手法に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会 講演論文集
-                      (B-16-7)</span
-                    >, Sep. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [75]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >Han Nay Aung</span
-                    >, Keita Goto, and Hiroyuki Ohsaki.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >A Study on the Applicability of TCP Congestion Avoidance
-                      Algorithms to Information-Centric Networking</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会技術研究報告 (IA2022-21)</span
-                    >, vol.122, pp.36-42, Sep. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [76]
-                  </div>
-                  <div>
-                    江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >AUTOSAR E2E Profile 2
-                      におけるメッセージ破壊検出能力に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-26)</span
-                    >, Sep. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [77]
-                  </div>
-                  <div>
-                    江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山崎 康広, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >コントローラエリアネットワーク向け E2E
-                      プロファイルを対象とした AUTOSAR
-                      エンド間通信におけるメッセージ破壊検出能力の計測</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会技術研究報告 (IA2022-65)</span
-                    >, vol.122, pp.86-90, Dec. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [78]
-                  </div>
-                  <div>
-                    高森 洸希, 江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 後藤 啓大, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ネットワークトポロジが分散型オンラインカーネル学習の効率性に与える影響に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会講演論文集
-                      (B-16-13)</span
-                    >, Sep. 2022.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [79]
-                  </div>
-                  <div>
-                    高森 洸希, 江見 太一,
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 後藤 啓大, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >ネットワークトポロジが分散型オンラインカーネル学習の効率性に与える影響</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会技術研究報告(IA2022-58)</span
-                    >, vol.122, pp. 56-59, Dec. 2022.
-                  </div>
-                </div>
-</li>
-</ul>
-<h4 class="text-base font-bold text-primary mt-8 mb-2 first:mt-0" id="n-2021">2021</h4>
-<ul class="divide-y divide-gray-200">
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [80]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山本 創麻, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >情報指向ネットワークにおける TCP CUBIC
-                      輻輳回避アルゴリズムの適用性に関する検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会技術研究報告 (IA2021-36)</span
-                    >, pp. 31-33, Dec. 2021.
-                  </div>
-                </div>
-</li>
-<li class="py-4">
-<div class="flex gap-4">
-                  <div class="flex-shrink-0 font-medium text-gray-500 w-10">
-                    [81]
-                  </div>
-                  <div>
-                    <span
-                      class="text-blue-600 font-bold underline decoration-blue-400 underline-offset-2"
-                      >ハンネーアウン</span
-                    >, 山本 創麻, 大崎 博之.<br /><span
-                      class="font-bold text-gray-900 text-lg leading-snug block my-1"
-                      >情報指向ネットワークにおける TCP CUBIC
-                      輻輳回避アルゴリズムの適用性に関する一検討</span
-                    ><span class="italic text-gray-700"
-                      >電子情報通信学会ソサイエティ大会 講演論文集
-                      (B-16-9)</span
-                    >, Sep. 2021.
-                  </div>
-                </div>
-</li>
-</ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- フッター -->
-    <footer class="bg-gray-900 text-white py-12 mt-auto">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gray-400 text-sm mb-4">
-          &copy; <span id="current-year"></span> Han Nay Aung. All rights reserved.
-        </p>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
-      const btn = document.getElementById("mobile-menu-btn");
-      const menu = document.getElementById("mobile-menu");
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    </script>
-  </body>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Han Nay Aung<span>ハンネーアウン</span></p>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=KiPwlsMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://ieeexplore.ieee.org/author/37089966133" target="_blank" rel="noopener">IEEE Xplore</a></li>
+        <li><a href="https://github.com/HanNayAung" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#top">ページトップ</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="current-year">2026</span> Han Nay Aung. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
 </html>
